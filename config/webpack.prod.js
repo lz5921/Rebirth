@@ -1,6 +1,4 @@
-const express = require('express');
 const fs = require('fs');
-const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
@@ -12,8 +10,8 @@ const getPlugins = () => {
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
-        from: __dirname + '/../src/assets/',
-        to: __dirname + '/../dist/assets/'
+        from: `${__dirname}/../src/assets/`,
+        to: `${__dirname}/../dist/assets/`
       }
     ]),
     new ExtractTextPlugin({
@@ -21,19 +19,20 @@ const getPlugins = () => {
       allChunks: true
     })
   ];
-  fs.readdirSync('./src/html/').forEach(filename => {
-    if (filename.substr(0, 1) !== '_') {
-      const splitted = filename.split('.');
-      if (splitted[1] === 'html') {
-        plugins.push(
-          new HtmlWebpackPlugin({
-            template: `./src/html/${filename}`,
-            filename: `./${filename}`
-          }),
-        );
+  fs.readdirSync('./src/html/')
+    .forEach((filename) => {
+      if (filename.substr(0, 1) !== '_') {
+        const splitted = filename.split('.');
+        if (splitted[1] === 'html') {
+          plugins.push(
+            new HtmlWebpackPlugin({
+              template: `./src/html/${filename}`,
+              filename: `./${filename}`
+            })
+          );
+        }
       }
-    }
-  });
+    });
 
   return plugins;
 };
@@ -44,7 +43,7 @@ module.exports = {
     './src/scss/app.scss'
   ],
   output: {
-    filename: './assets/js/bundle.js',
+    filename: './assets/js/bundle.js'
   },
   plugins: getPlugins(),
   module: {
@@ -52,7 +51,7 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader']
       },
       {
         test: /\.(css|scss)$/,
@@ -61,13 +60,13 @@ module.exports = {
           fallback: 'style-loader',
           use: [
             {
-              loader: "css-loader",
+              loader: 'css-loader',
               options: {
 
                 url: false
               }
             }, {
-              loader: "postcss-loader",
+              loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
                 plugins: () => [
@@ -78,10 +77,10 @@ module.exports = {
             'sass-loader'
           ]
         })
-      },
-    ],
+      }
+    ]
   },
   resolve: {
-    extensions: ['.js', '.jpg', '.html', '.scss'],
+    extensions: ['.js', '.jpg', '.html', '.scss']
   }
 };

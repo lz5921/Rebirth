@@ -3,7 +3,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const htmlFileNames = fs.readdirSync('./src/html/');
 
@@ -43,7 +43,7 @@ const getPlugins = () => {
           new HtmlWebpackPlugin({
             template: `./src/html/${filename}`,
             filename: `./${filename}`
-          }),
+          })
         );
       }
     }
@@ -55,7 +55,7 @@ const getPlugins = () => {
 module.exports = {
   entry: getEntries(),
   output: {
-    filename: './assets/js/bundle.js',
+    filename: './assets/js/bundle.js'
   },
   plugins: getPlugins(),
   module: {
@@ -70,7 +70,7 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader']
       },
       {
         test: /\.(css|scss)$/,
@@ -79,12 +79,12 @@ module.exports = {
           fallback: 'style-loader',
           use: [
             {
-              loader: "css-loader",
+              loader: 'css-loader',
               options: {
                 url: false
               }
             }, {
-              loader: "postcss-loader",
+              loader: 'postcss-loader',
               options: {
                 ident: 'postcss',
                 plugins: () => [
@@ -95,10 +95,10 @@ module.exports = {
             'sass-loader'
           ]
         })
-      },
-    ],
+      }
+    ]
   },
   resolve: {
-    extensions: ['.js', '.jpg', '.html', '.scss'],
+    extensions: ['.js', '.jpg', '.html', '.scss']
   }
 };

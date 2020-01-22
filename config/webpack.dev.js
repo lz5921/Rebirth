@@ -9,7 +9,7 @@ const getPlugins = () => {
     require('autoprefixer'),
     new webpack.HotModuleReplacementPlugin(),
     new FriendlyErrorsWebpackPlugin({
-      clearConsole: true,
+      clearConsole: true
     })
   ];
   fs.readdirSync('./src/html/').forEach(filename => {
@@ -19,7 +19,7 @@ const getPlugins = () => {
         new HtmlWebpackPlugin({
           template: `./src/html/${filename}`,
           filename: `./${filename}`
-        }),
+        })
       );
     }
   });
@@ -33,7 +33,7 @@ module.exports = {
     './src/scss/app.scss'
   ],
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle.js'
   },
   devServer: {
     contentBase: './src/html',
@@ -49,21 +49,21 @@ module.exports = {
     }
   },
   plugins: getPlugins(),
-  devtool: "inline-source-map",
+  devtool: 'inline-source-map',
   module: {
     rules: [
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader']
       },
       {
-        enforce: "pre",
+        enforce: 'pre',
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "eslint-loader",
+        loader: 'eslint-loader',
         options: {
-          emitWarning: true,
+          emitWarning: true
         }
       },
       {
@@ -72,29 +72,29 @@ module.exports = {
         use: [
           'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
               sourceMap: true,
               url: false
             }
           }, {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               ident: 'postcss',
               sourceMap: true,
               plugins: () => []
             }
           }, {
-            loader: "sass-loader",
+            loader: 'sass-loader',
             options: {
               sourceMap: true
             }
-          },
-        ],
-      },
-    ],
+          }
+        ]
+      }
+    ]
   },
   resolve: {
-    extensions: ['.js', '.jpg', '.html', '.scss'],
-  },
+    extensions: ['.js', '.jpg', '.html', '.scss']
+  }
 };
