@@ -1,4 +1,4 @@
 import './menu';
 import './home/post-list';
-import './other/aos';
+// import './other/aos';
 
