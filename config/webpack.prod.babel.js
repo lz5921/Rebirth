@@ -8,16 +8,10 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const htmlFileNames = fs.readdirSync('./src/html/');
 
 const getEntries = () => {
-  const entries = [
+  return [
     './src/js/app.js',
     './src/scss/app.scss'
   ];
-
-  htmlFileNames.forEach(filename => {
-    entries.push(`./src/html/${filename}`);
-  });
-
-  return entries;
 };
 
 const getPlugins = () => {

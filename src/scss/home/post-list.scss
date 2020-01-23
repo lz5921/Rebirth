@@ -1,0 +1,178 @@
+.main-content {
+  margin-top: 5rem;
+  .post-card {
+    margin-bottom: 6rem;
+    &-image {
+      position: relative;
+      height: 17.5rem;
+      margin: 0 auto;
+      &-shadow {
+        display: none;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        background-color: #f5f6f9;
+      }
+      &-link {
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        &-background {
+          border-radius: 2px;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-position: 50%;
+          background-size: cover;
+        }
+      }
+    }
+    &-content {
+      height: 100%;
+      &-title {
+        margin: 1rem 0;
+        &-link {
+          font-size: 1.5rem;
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+      &-excerpt {
+        letter-spacing: 0.5px;
+        line-height: 1.5;
+        font-size: .875rem;
+        margin-bottom: 1rem;
+      }
+      &-meta {
+        margin-bottom: 1rem;
+        &-authors {
+          &-link {
+            margin-left: -1rem;
+            width: 2.8rem;
+            height: 2.8rem;
+            &:first-child {
+              margin-left: 0;
+            }
+            &-avatar {
+              object-fit: cover;
+            }
+          }
+        }
+        &-other {
+          font-size: 1rem;
+          &-tag {
+
+          }
+          &-date {
+
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    .post-card {
+      &-image {
+        width: 18.75rem;
+        height: 18.75rem;
+        &-shadow {
+          display: block;
+        }
+        &-link {
+          top: 2rem;
+          left: 2rem;
+          transition: all 250ms cubic-bezier(0.02, 0.01, 0.5, 1) 0ms;
+          &:hover {
+            top: 3rem;
+            left: 3rem;
+          }
+          &.even {
+            top: 2rem;
+            left: -2rem;
+            &:hover {
+              top: 3rem;
+              left: -3rem;
+            }
+          }
+          &-background {
+          }
+        }
+      }
+      &-content {
+        &-title {
+          &-link {
+          }
+        }
+        &-excerpt {
+        }
+        &-meta {
+          &-authors {
+            &-link {
+              &-avatar {
+              }
+            }
+          }
+          &-other {
+            &-tag {
+
+            }
+            &-date {
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 992px) {
+  .main-content {
+    .post-card {
+      &-image {
+        width: 25rem;
+        height: 25rem;
+        &-shadow {
+        }
+        &-link {
+          &-background {
+          }
+        }
+      }
+      &-content {
+        &-title {
+          &-link {
+          }
+        }
+        &-excerpt {
+        }
+        &-meta {
+          &-authors {
+            &-link {
+              &-avatar {
+              }
+            }
+          }
+          &-other {
+            &-tag {
+
+            }
+            &-date {
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {}

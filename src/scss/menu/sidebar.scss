@@ -1,0 +1,23 @@
+.site-wrapper {
+  .sidebar-wrapper {
+    min-height: 100vh;
+    margin-left: -15rem;
+    transition: margin .25s ease-out;
+    .border-right {
+      height: 100vh;
+      .sidebar-heade {
+        padding: 0.875rem 1.25rem;
+        font-size: 1.2rem;
+      }
+      .list-group {
+        width: 15rem;
+      }
+    }
+  }
+  &.toggled {
+    overflow: hidden;
+    .sidebar-wrapper {
+      margin-left: 0;
+    }
+  }
+}
