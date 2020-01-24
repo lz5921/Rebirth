@@ -9,12 +9,14 @@ const menu = (window, $) => {
     $('.site-wrapper').toggleClass('toggled');
     $(event.currentTarget).hide(250);
     $('body').addClass('overflow-hidden');
+    $('.sidebar-container').addClass('border-right');
   });
   // 移动端关闭侧边栏
   $('.sidebar-close').click(event => {
     $('.site-wrapper').toggleClass('toggled');
     $('.sidebar-toggler').show(250);
     $('body').removeClass('overflow-hidden');
+    $('.sidebar-container').removeClass('border-right');
   });
 };
 

@@ -1,0 +1,22 @@
+.site-pagination {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  .pagination {
+    .page-item {
+      &.active {
+        span {
+          background-color: #e9ecef;
+          border: none;
+          color: #000;
+          font-size: 1.2rem;
+        }
+      }
+      a {
+        border: none;
+        color: #000;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
