@@ -1,5 +1,8 @@
 .site-wrapper {
   .sidebar-wrapper {
+    position: fixed;;
+    top: 0;
+    left: 0;
     min-height: 100vh;
     margin-left: -15rem;
     transition: margin .25s ease-out;

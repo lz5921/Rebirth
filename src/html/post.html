@@ -8,7 +8,6 @@
   <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
   <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
   <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.18.0/styles/default.min.css">
-<!--  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build//styles/default.min.css">-->
   <!--  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">-->
 </head>
 <body>
@@ -25,31 +24,6 @@
 </div>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/highlight.js@9.18.0/lib/highlight.min.js"></script>
-<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/highlight.min.js"></script>-->
-<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/dart.min.js"></script>-->
 <!--<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>-->
-<script>
-// 自动载入对应的语言脚本
-//hljs.initHighlightingOnLoad();
-document.addEventListener('DOMContentLoaded', (event) => {
-  document.querySelectorAll('pre code').forEach((block) => {
-    console.log(blockLanguage(block))
-    hljs.highlightBlock(block);
-  });
-});
-hljs.debugMode();
-hljs.getLanguage('dart');
-function blockLanguage(block) {
-  let match, length, _class;
-  let classes = block.className + ' ';
-
-  classes += block.parentNode ? block.parentNode.className : '';
-
-  match = /\blang(?:uage)?-([\w-]+)\b/i.exec(classes);
-
-  return match[1];
-}
-</script>
 </body>
 </html>

@@ -8,13 +8,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const htmlFileNames = fs.readdirSync('./src/html/');
 
 const getEntries = () => {
-    const entries = [
-        './src/js/app.js',
-        './src/scss/app.scss'
-    ];
+    const entries = {
+        'rebirth': [
+            './src/js/app.js',
+            './src/scss/app.scss'
+        ]
+        // 'worker.highlightjs': './src/js/worker/highlightjs.js'
+    };
 
     htmlFileNames.forEach((filename) => {
-        entries.push(`./src/html/${filename}`);
+        entries['rebirth'].push(`./src/html/${filename}`);
     });
 
     return entries;
@@ -34,7 +37,8 @@ const getPlugins = () => {
             plugins.push(
                 new HtmlWebpackPlugin({
                     template: `./src/html/${filename}`,
-                    filename: `./${filename}`
+                    filename: `./${filename}`,
+                    chunks: ['rebirth']
                 }),
             );
         }
@@ -46,7 +50,7 @@ const getPlugins = () => {
 module.exports = {
     entry: getEntries(),
     output: {
-        filename: 'bundle.js',
+        filename: '[name].js'
     },
     devServer: {
         contentBase: './src/html',
