@@ -1,14 +1,15 @@
 const blockLanguage = (block) => {
   let classes = block.className + ' ';
   classes += block.parentNode ? block.parentNode.className : '';
-  const match = /\blang(?:uage)?-([\w-]+)\b/i.exec(classes);
-  return match[1];
+  let match = /\blang(?:uage)?-([\w-]+)\b/i.exec(classes);
+  match = match === null ? null : match[1];
+  return match;
 };
 
 const highlight = (document, hljs) => {
   addEventListener('DOMContentLoaded', () => {
     const codeBlocks = document.querySelectorAll('pre code');
-    const worker = new Worker('assets/js/worker.highlightjs.js');
+    const worker = new Worker('/assets/js/worker.highlightjs.js');
     worker.onmessage = (event) => {
       const highlightData = JSON.parse(event.data);
       codeBlocks[highlightData.index].innerHTML = highlightData.result.value;
