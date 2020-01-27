@@ -1,0 +1,21 @@
+.main-content {
+  .post-donation {
+    .btn-donation {
+      padding: 1rem;
+      i {
+        font-size: 1.225rem;
+      }
+    }
+    .collapse-donation {
+      margin-top: 2rem;
+      .card-collapse {
+        figure {
+          width: 50%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

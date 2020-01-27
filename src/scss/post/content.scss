@@ -42,7 +42,6 @@
     font-weight: 400;
     border-left: 4px solid #1abc9c;
     padding-left: 1em;
-    margin: 1em 3em 1em 2em;
   }
 
   @media only screen and ( max-width: 640px ) {
@@ -102,17 +101,11 @@
 
   a {
     color: #1abc9c;
-    border-bottom: 1px solid #1abc9c;
     transition: all 500ms ease 0ms;
     &:hover {
+      color: #555;
       text-decoration: underline;
     }
-  }
-
-  a:hover {
-    border-bottom-color: #555;
-    color: #555;
-    text-decoration: none;
   }
 
   ins, a {

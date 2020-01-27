@@ -32,9 +32,10 @@
     &-content {
       height: 100%;
       &-tag {
-        color: #3eb0ef;
+        color: $no-focus-color;
+        font-size: 0.725rem;
         i {
-          font-size: 1rem;
+          font-size: 0.725rem;
         }
       }
       &-title {
@@ -63,6 +64,8 @@
             }
             &-avatar {
               object-fit: cover;
+              width: 2.8rem;
+              height: 2.8rem;
             }
           }
         }

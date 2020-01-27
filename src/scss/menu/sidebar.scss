@@ -21,10 +21,10 @@
         .menu-item {
           background-color: #f8f9fa;
           &.active {
-            color: #1890ff;
-            background-color: #e6f7ff;
-            border-color: #e6f7ff;
-            border-right: 3px solid #1890ff;
+            color: $primary-active-color;
+            background-color: $primary-active-background-color;
+            border-color: $primary-active-background-color;
+            border-right: 3px solid $primary-active-color;
           }
         }
       }
