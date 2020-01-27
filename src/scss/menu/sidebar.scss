@@ -8,12 +8,25 @@
     transition: margin .25s ease-out;
     .sidebar-container {
       height: 100vh;
+      background-color: #f8f9fa;
+      &.boxshadow-right {
+        box-shadow: 5px 0 5px 0 #888888;;
+      }
       .sidebar-header {
         padding: 0.875rem 1.25rem;
         font-size: 1.2rem;
       }
       .list-group {
         width: 15rem;
+        .menu-item {
+          background-color: #f8f9fa;
+          &.active {
+            color: #1890ff;
+            background-color: #e6f7ff;
+            border-color: #e6f7ff;
+            border-right: 3px solid #1890ff;
+          }
+        }
       }
     }
   }

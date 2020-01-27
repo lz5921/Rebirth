@@ -31,8 +31,14 @@
     }
     &-content {
       height: 100%;
+      &-tag {
+        color: #3eb0ef;
+        i {
+          font-size: 1rem;
+        }
+      }
       &-title {
-        margin: 1rem 0;
+        margin: 0.25rem 0 1rem;
         &-link {
           font-size: 1.5rem;
           text-decoration: none;
@@ -41,7 +47,7 @@
       }
       &-excerpt {
         letter-spacing: 0.5px;
-        line-height: 1.5;
+        line-height: 1.8;
         font-size: .875rem;
         margin-bottom: 3rem;
       }
@@ -61,16 +67,11 @@
           }
         }
         &-other {
-          font-size: 1rem;
-          &-tag {
-            i {
-              font-size: .725rem;
-            }
-          }
+          font-size: 0.725rem;
+          color: #92a3ab;
           &-date {
-            i {
-              font-size: .725rem;
-            }
+          }
+          &-readtime {
           }
         }
       }

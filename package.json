@@ -10,6 +10,10 @@
     "eslint-fix": "eslint src/**/*.js --fix"
   },
   "license": "MIT",
+  "author": {
+    "email": "i@iiong.com",
+    "name": "Jaxson Wang"
+  },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.3.0",
