@@ -1,3 +1,5 @@
+'use strict';
+
 onmessage = function onmessage(event) {
   var data = JSON.parse(event.data);
   var result = null;

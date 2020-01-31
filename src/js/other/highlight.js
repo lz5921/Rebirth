@@ -6,9 +6,9 @@ const blockLanguage = (block) => {
   return match;
 };
 
-const highlight = (document, hljs) => {
+const highlight = (window) => {
   addEventListener('DOMContentLoaded', () => {
-    const codeBlocks = document.querySelectorAll('pre code');
+    const codeBlocks = window.document.querySelectorAll('pre code');
     const worker = new Worker('/assets/js/worker.highlightjs.js');
     worker.onmessage = (event) => {
       const highlightData = JSON.parse(event.data);
@@ -24,4 +24,4 @@ const highlight = (document, hljs) => {
   });
 };
 
-export default highlight(window.document, window.hljs);
+export default highlight(window);
