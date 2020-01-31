@@ -15,6 +15,14 @@
       .sidebar-header {
         padding: 0.875rem 1.25rem;
         font-size: 1.2rem;
+        .sidebar-right {
+          .sidebar-search {
+            margin-right: 0.725rem;
+            i {
+              font-size: 1rem;
+            }
+          }
+        }
       }
       .list-group {
         width: 15rem;

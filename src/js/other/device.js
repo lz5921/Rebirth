@@ -1,7 +1,7 @@
 import { debounce } from '../untils';
 
 function getInnerWidth($) {
-  const width = window.innerWidth;
+  const width = $(window).width();
   if (width <= 576) {
     $('.post-content').addClass('mobile-content').removeClass('tablet-content', 'desktop-content');
   }

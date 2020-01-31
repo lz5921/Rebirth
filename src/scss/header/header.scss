@@ -6,8 +6,20 @@
     background-color: rgba(255, 255, 255, 0);
     box-shadow: none!important;
     padding: 1rem 0;
+    .header-navbar {
+      .nav-left {
+        .btn-search {
+          color: rgba(255,255,255,.5);
+        }
+      }
+    }
   }
   .header-navbar {
-
+    .nav-left {
+      .btn-search {
+        background-color: rgba(0, 0, 0, 0);
+        border: none;
+      }
+    }
   }
 }
