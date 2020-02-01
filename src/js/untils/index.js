@@ -13,7 +13,6 @@ export const isScrollTop = ($) => {
  */
 export const addTopNav = ($) => {
   $('.main-header').addClass('top-nav');
-  $('.header-navbar').addClass('navbar-dark').removeClass('navbar-light');
 };
 
 /**
@@ -22,7 +21,6 @@ export const addTopNav = ($) => {
  */
 export const removeTopNav = ($) => {
   $('.main-header').removeClass('top-nav');
-  $('.header-navbar').removeClass('navbar-dark').addClass('navbar-light');
 };
 
 /**
@@ -33,7 +31,7 @@ export const removeTopNav = ($) => {
 export const loadScripts = (scripts) => {
   function get(src) {
     return new Promise(function (resolve, reject) {
-      var el = document.createElement('script');
+      const el = document.createElement('script');
       el.async = true;
       el.addEventListener('load', function () {
         resolve(src);
@@ -43,6 +41,35 @@ export const loadScripts = (scripts) => {
       }, false);
       el.src = src;
       (document.getElementsByTagName('body')[0] || document.getElementsByTagName('head')[0]).appendChild(el);
+    });
+  }
+
+  const myPromises = scripts.map(function (script, index) {
+    return get(script);
+  });
+
+  return Promise.all(myPromises);
+};
+
+/**
+ * 异步载入样式脚本
+ * @param scripts 脚本数组对象
+ * @returns {Promise<Object[]>}
+ */
+export const loadStyles = (scripts) => {
+  function get(src) {
+    return new Promise(function (resolve, reject) {
+      const el = document.createElement('link');
+      el.type = 'text/css';
+      el.rel = 'stylesheet';
+      el.addEventListener('load', function () {
+        resolve(src);
+      }, false);
+      el.addEventListener('error', function () {
+        reject(src);
+      }, false);
+      el.href = src;
+      document.getElementsByTagName('head')[0].appendChild(el);
     });
   }
 

@@ -6,12 +6,34 @@
     background-color: #f9f9f9;
     list-style: none;
     width: 100%;
+
     li {
       display: list-item;
       text-align: -webkit-match-parent;
       padding: 0.2rem 0;
+
       a {
         color: $main-color;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .main-content {
+    .post-copyright {
+      border-left: 4px solid $main-color;
+      background-color: #000;
+
+      li {
+        a {
+          color: $dark-main-color;
+          text-decoration: underline;
+          transition: all 500ms ease 0ms;
+          &:hover {
+            color: $dark-main-hover-color;
+          }
+        }
       }
     }
   }

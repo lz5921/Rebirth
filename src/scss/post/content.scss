@@ -1,5 +1,6 @@
 .post-content {
   width: 100%;
+
   &.borderbox {
     box-sizing: border-box;
   }
@@ -44,7 +45,7 @@
     padding-left: 1em;
   }
 
-  @media only screen and ( max-width: 640px ) {
+  @media only screen and (max-width: 640px) {
     blockquote {
       margin: 1em 0;
     }
@@ -102,6 +103,7 @@
   a {
     color: #1abc9c;
     transition: all 500ms ease 0ms;
+
     &:hover {
       color: #555;
       text-decoration: underline;
@@ -128,11 +130,12 @@
   }
 
   pre {
-    background: #f8f8f8;
-    border: 1px solid #ddd;
-    padding: 1em 1.5em;
     display: block;
     -webkit-overflow-scrolling: touch;
+
+    code {
+      padding: 1em 1.5em;
+    }
   }
 
   hr {
@@ -150,7 +153,6 @@
 
   strong, b {
     font-weight: bold;
-    color: #000;
   }
 
   [draggable] {
@@ -184,14 +186,13 @@
     font-family: Palatino, Optima, Georgia, serif;
   }
 
-   p, pre, ul, ol, dl, form, hr, table,blockquote {
+  p, pre, ul, ol, dl, form, hr, table, blockquote {
     margin-bottom: 1.2em
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: PingFang SC, Verdana, Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, Microsoft Sans Serif, WenQuanYi Micro Hei, sans-serif;
     font-weight: 500;
-    color: #000;
     line-height: 1.35;
   }
 
@@ -242,6 +243,7 @@
 
   table {
     margin: 0 auto 1.2rem;
+    width: 95%;
   }
 
   table th, table td, table caption {
@@ -263,8 +265,7 @@
     border-bottom: none;
   }
 
-   em, legend, caption {
-    color: #000;
+  em, legend, caption {
     font-weight: inherit;
   }
 
@@ -287,5 +288,32 @@
   &.mobile-content > blockquote {
     margin-left: 1rem;
     margin-right: 1rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .post-content {
+    a {
+      color: #1abc9c;
+      transition: all 500ms ease 0ms;
+
+      &:hover {
+        color: $dark-main-hover-color;
+        text-decoration: underline;
+      }
+    }
+
+    table th, table td, table caption {
+      border: 1px solid $dark-main-color;
+      color: $dark-main-color;
+    }
+
+    table th {
+      background: #000;
+    }
+
+    table thead th {
+      background: #000;
+    }
   }
 }

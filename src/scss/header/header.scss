@@ -1,39 +1,168 @@
 .main-header {
-  background-color: rgba(255, 255, 255, 1);
+  background-color: $background-color;
   padding: 0.5rem 0;
   transition: all 500ms ease 0ms;
+
   &.top-nav {
     background-color: rgba(255, 255, 255, 0);
-    box-shadow: none!important;
+    box-shadow: none !important;
     padding: 1rem 0;
+
     .header-navbar {
-      .navbar-brand-logo {
-        svg {
-          g {
-            fill: #fff;
+      .navbar-brand {
+        color: rgba(255, 255, 255, .5);
+        transition: all 500ms ease 0ms;
+
+        &:hover {
+          color: rgba(255, 255, 255, 1);
+        }
+
+        .navbar-brand-logo {
+          svg {
+            g {
+              fill: #fff;
+            }
           }
         }
       }
+
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            color: rgba(255, 255, 255, .5);
+            transition: all 500ms ease 0ms;
+
+            &:hover {
+              color: rgba(255, 255, 255, 1);
+            }
+          }
+
+          &.active {
+            .nav-link {
+              color: rgba(255, 255, 255, 1);
+            }
+          }
+        }
+      }
+
       .nav-left {
         .btn-search {
-          color: rgba(255,255,255,.5);
+          color: rgba(255, 255, 255, .5);
+          transition: all 500ms ease 0ms;
+
+          &:hover {
+            color: rgba(255, 255, 255, 1);
+          }
         }
       }
     }
   }
+
   .header-navbar {
-    .navbar-brand-logo {
-      width: 1.875rem;
-      height: 1.875rem;
-      margin-right: 0.25rem;
-      svg {
-        vertical-align: initial;
+    .navbar-brand {
+      color: rgba(0, 0, 0, .9);
+
+      .navbar-brand-logo {
+        width: 1.875rem;
+        height: 1.875rem;
+        margin-right: 0.25rem;
+
+        svg {
+          vertical-align: initial;
+        }
       }
     }
+
+    .navbar-nav {
+      .nav-item {
+        .nav-link {
+          color: rgba(0, 0, 0, .5);
+          transition: all 500ms ease 0ms;
+
+          &:hover {
+            color: rgba(0, 0, 0, .9);
+          }
+        }
+
+        &.active {
+          .nav-link {
+            color: rgba(0, 0, 0, .9);
+          }
+        }
+      }
+    }
+
     .nav-left {
       .btn-search {
         background-color: rgba(0, 0, 0, 0);
         border: none;
+        color: rgba(0, 0, 0, .5);
+        transition: all 500ms ease 0ms;
+
+        &:hover {
+          color: rgba(0, 0, 0, .9);
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .main-header {
+    background-color: $dark-background-color;
+    &.top-nav {
+      .header-navbar {
+        .navbar-brand {
+          .navbar-brand-logo {
+            svg {
+              g {
+                fill: $dark-main-hover-color;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .header-navbar {
+      .navbar-brand {
+        color: rgba(255, 255, 255, .5);
+        .navbar-brand-logo {
+          svg {
+            g {
+              fill: $dark-main-color;
+            }
+          }
+        }
+      }
+
+      .navbar-nav {
+        .nav-item {
+          .nav-link {
+            color: rgba(255, 255, 255, .5);
+
+            &:hover {
+              color: rgba(255, 255, 255, .8);
+            }
+          }
+
+          &.active {
+            .nav-link {
+              color: rgba(255, 255, 255, .8);
+            }
+          }
+        }
+      }
+
+      .nav-left {
+        .btn-search {
+          background-color: rgba(0, 0, 0, 0);
+          color: rgba(255, 255, 255, .5);
+
+          &:hover {
+            color: rgba(255, 255, 255, .8);
+          }
+        }
       }
     }
   }

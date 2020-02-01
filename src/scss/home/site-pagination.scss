@@ -2,20 +2,50 @@
   display: flex;
   flex: 1;
   justify-content: center;
+
   .pagination {
     .page-item {
       &.active {
         span {
           background-color: #e9ecef;
           border: none;
-          color: #000;
+          color: $main-color;
           font-size: 1.2rem;
         }
       }
+
       a {
         border: none;
-        color: #000;
+        color: $main-color;
         font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-pagination {
+    .pagination {
+      .page-item {
+        &.active {
+          span {
+            background-color: #000;
+            border: none;
+            color: $dark-main-color;
+            font-size: 1.2rem;
+          }
+        }
+
+        a {
+          background-color: $dark-background-color;
+          border: none;
+          color: $dark-main-color;
+          font-size: 1.2rem;
+
+          &:hover {
+            color: $dark-main-hover-color;
+          }
+        }
       }
     }
   }

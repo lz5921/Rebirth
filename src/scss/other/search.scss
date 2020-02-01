@@ -4,13 +4,13 @@
     position: fixed;
     top: 0;
     right: 0;
-    background: #fff;
+    background-color: #fff;
     flex-wrap: wrap;
     box-shadow: -5px 0 5px 0 rgba(0, 0, 0, 0.15);
     z-index: 1050;
 
     .search-close {
-      font-size: 5rem;
+      font-size: 3rem;
       outline: none;
     }
 
@@ -25,9 +25,9 @@
 
         .search-icon {
           position: absolute;
-          top: 0.9375rem;
+          top: 0.6rem;
           left: 0.5rem;
-          font-size: 1.75rem;
+          font-size: 1.5rem;
           color: #777;
         }
 
@@ -35,15 +35,15 @@
           width: 100%;
 
           .search-input {
-            font-size: 1.875rem;
+            font-size: 1.5rem;
             font-weight: 700;
             display: block;
             width: 100%;
-            height: 3.875rem;
+            height: 3rem;
             padding: 0 0 0.1875rem 2.5rem;
             transition: border-color .3s ease;
             color: #333;
-            border-width: 0 0 10px 0;
+            border-width: 0 0 6px 0;
             border-style: solid;
             border-color: #999;
             border-radius: 0;
@@ -76,7 +76,7 @@
           cursor: pointer;
 
           h2 {
-            font-size: 1.875rem;
+            font-size: 1.25rem;
             color: #333;
             margin-bottom: 0.625rem;
           }
@@ -85,6 +85,51 @@
             font-size: 0.8125rem;
             color: #777;
             font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .site-wrapper {
+    .search-wrapper {
+      background-color: $dark-background-color;
+
+      .search-close {
+        color: $dark-main-color;
+        text-shadow: none;
+      }
+
+      .search-content {
+        .search-form {
+          .search-icon {
+            color: $dark-main-color;
+          }
+
+          label {
+            .search-input {
+              color: $dark-main-color;
+              border-color: $dark-main-color;
+              background-color: $dark-background-color;
+            }
+          }
+        }
+
+        .search-meta {
+          color: $dark-main-color;
+        }
+
+        .search-results {
+          .ghost-search-item {
+            h2 {
+              color: $dark-main-color;
+            }
+
+            span {
+              color: $dark-main-color;
+            }
           }
         }
       }

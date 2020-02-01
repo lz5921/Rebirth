@@ -2,18 +2,55 @@
   .post-donation {
     .btn-donation {
       padding: 1rem;
+      outline: none;
+      &:focus {
+        box-shadow: none;
+      }
+
       i {
         font-size: 1.225rem;
       }
     }
+
     .collapse-donation {
       margin-top: 2rem;
+
       .card-collapse {
+        background-color: transparent;
+
         figure {
           width: 50%;
+
           img {
             width: 100%;
           }
+
+          .figure-caption {
+            margin-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .main-content {
+    .post-donation {
+      .btn-donation {
+        i {
+          font-size: 1.225rem;
+          color: $dark-main-color;
+          transition: all 500ms ease 0ms;
+          &:hover {
+            color: $dark-main-hover-color;
+          }
+        }
+      }
+
+      .collapse-donation {
+        .card-collapse {
+          background-color: #000;
         }
       }
     }

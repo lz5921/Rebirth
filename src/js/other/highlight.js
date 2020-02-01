@@ -15,6 +15,7 @@ const highlight = (window) => {
       codeBlocks[highlightData.index].innerHTML = highlightData.result.value;
     };
     codeBlocks.forEach((block, index) => {
+      block.classList.add('hljs');
       worker.postMessage(JSON.stringify({
         code: block.textContent,
         lang: blockLanguage(block),
