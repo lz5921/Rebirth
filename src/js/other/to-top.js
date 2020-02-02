@@ -1,5 +1,10 @@
 const toTop = ($) => {
-  var returnTop = $('.click-to-top');
+  const returnTop = $('.click-to-top');
+  if ($(this).scrollTop() >= 50) {
+    returnTop.addClass('bounceInRight').removeClass('bounceOutDown');
+  } else {
+    returnTop.removeClass('bounceInRight').addClass('bounceOutDown');
+  }
   $(window).scroll(function () {
     if ($(this).scrollTop() >= 50) {
       returnTop.addClass('bounceInRight').removeClass('bounceOutDown');

@@ -1,3 +1,5 @@
+'use strict';
+
 const fs = require('fs');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
