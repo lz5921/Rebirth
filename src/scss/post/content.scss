@@ -291,7 +291,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@mixin dark-mode {
   .post-content {
     a {
       color: #1abc9c;
@@ -316,4 +316,12 @@
       background: #000;
     }
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
+
+[data-theme="dark"] {
+  @include dark-mode;
 }

@@ -64,7 +64,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@mixin dark-mode {
   .main-content {
     .post-author-footer {
       .author-card {
@@ -105,4 +105,12 @@
       }
     }
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
+
+[data-theme="dark"] {
+  @include dark-mode;
 }

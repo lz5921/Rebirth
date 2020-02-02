@@ -19,7 +19,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@mixin dark-mode {
   .main-content {
     .post-copyright {
       border-left: 4px solid $main-color;
@@ -37,4 +37,12 @@
       }
     }
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
+
+[data-theme="dark"] {
+  @include dark-mode;
 }

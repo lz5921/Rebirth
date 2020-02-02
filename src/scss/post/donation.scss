@@ -34,7 +34,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@mixin dark-mode {
   .main-content {
     .post-donation {
       .btn-donation {
@@ -55,4 +55,12 @@
       }
     }
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
+
+[data-theme="dark"] {
+  @include dark-mode;
 }

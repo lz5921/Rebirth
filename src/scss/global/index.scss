@@ -4,13 +4,13 @@ a {
   }
 }
 
-@media (prefers-color-scheme: light) {
+@mixin light-mode {
   :root {
     --color-content: light;
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@mixin dark-mode {
   :root {
     --color-content: dark;
   }
@@ -19,4 +19,20 @@ a {
     color: $dark-main-color;
     background: $dark-background-color;
   }
+}
+
+@media (prefers-color-scheme: light) {
+  @include light-mode;
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
+
+[data-theme="light"] {
+  @include light-mode;
+}
+
+[data-theme="dark"] {
+  @include dark-mode;
 }

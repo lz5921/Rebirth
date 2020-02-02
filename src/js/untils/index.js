@@ -62,13 +62,14 @@ export const loadStyles = (scripts) => {
       const el = document.createElement('link');
       el.type = 'text/css';
       el.rel = 'stylesheet';
+      el.id = src.id;
       el.addEventListener('load', function () {
-        resolve(src);
+        resolve(src.url);
       }, false);
       el.addEventListener('error', function () {
-        reject(src);
+        reject(src.url);
       }, false);
-      el.href = src;
+      el.href = src.url;
       document.getElementsByTagName('head')[0].appendChild(el);
     });
   }

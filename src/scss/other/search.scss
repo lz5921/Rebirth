@@ -7,7 +7,7 @@
     background-color: #fff;
     flex-wrap: wrap;
     box-shadow: -5px 0 5px 0 rgba(0, 0, 0, 0.15);
-    z-index: 1050;
+    z-index: 1080;
 
     .search-close {
       font-size: 3rem;
@@ -92,7 +92,7 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@mixin dark-mode {
   .site-wrapper {
     .search-wrapper {
       background-color: $dark-background-color;
@@ -135,4 +135,12 @@
       }
     }
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
+
+[data-theme="dark"] {
+  @include dark-mode;
 }

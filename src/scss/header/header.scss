@@ -93,7 +93,7 @@
     }
 
     .nav-left {
-      .btn-search {
+      .btn-nav-left {
         background-color: rgba(0, 0, 0, 0);
         border: none;
         color: rgba(0, 0, 0, .5);
@@ -102,12 +102,16 @@
         &:hover {
           color: rgba(0, 0, 0, .9);
         }
+
+        &:focus {
+          box-shadow: none;
+        }
       }
     }
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@mixin dark-mode {
   .main-header {
     background-color: $dark-background-color;
     &.top-nav {
@@ -166,4 +170,12 @@
       }
     }
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
+
+[data-theme="dark"] {
+  @include dark-mode;
 }
