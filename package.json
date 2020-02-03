@@ -1,6 +1,6 @@
 {
   "name": "rebirth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "serve": "webpack-dev-server --config config/webpack.dev.babel.js --mode development ",
     "start": "node config/server.js",
