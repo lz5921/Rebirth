@@ -6,6 +6,10 @@
 
 请访问该分支：[Ghost Theme](https://github.com/JaxsonWang/rebirth/tree/ghost-theme)
 
+### Typecho 主题
+
+[@JaydenForYou](https://github.com/JaydenForYou/Spring)
+
 ### 开发命令
 
 ```bash
