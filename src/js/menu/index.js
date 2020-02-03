@@ -1,3 +1,18 @@
+const openSideBar = ($) => {
+  $('.site-wrapper').toggleClass('toggled');
+  $(event.currentTarget).hide(250);
+  $('body').addClass('overflow-hidden').append('<div class="modal-backdrop fade show global-modal global-modal-click-close"></div>');
+  $('.sidebar-container').addClass('boxshadow-right');
+};
+
+const closeSideBar = ($) => {
+  $('.site-wrapper').toggleClass('toggled');
+  $('.sidebar-toggler').show(250);
+  $('body').removeClass('overflow-hidden');
+  $('.sidebar-container').removeClass('boxshadow-right');
+  $('.global-modal').remove();
+};
+
 /**
  * 菜单业务
  * @param window window对象
@@ -6,18 +21,14 @@
 const menu = (window, $) => {
   // 移动端打开侧边栏
   $('.sidebar-toggler').click(event => {
-    $('.site-wrapper').toggleClass('toggled');
-    $(event.currentTarget).hide(250);
-    $('body').addClass('overflow-hidden').append('<div class="modal-backdrop fade show global-modal"></div>');
-    $('.sidebar-container').addClass('boxshadow-right');
+    openSideBar($);
+    $('.global-modal-click-close').bind('click', event => {
+      closeSideBar($);
+    });
   });
-  // 移动端关闭侧边栏
   $('.sidebar-close').click(event => {
-    $('.site-wrapper').toggleClass('toggled');
-    $('.sidebar-toggler').show(250);
-    $('body').removeClass('overflow-hidden');
-    $('.sidebar-container').removeClass('boxshadow-right');
-    $('.global-modal').remove();
+    closeSideBar($);
+    $('.global-modal-click-close').unbind();
   });
 };
 
