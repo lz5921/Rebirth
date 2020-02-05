@@ -273,6 +273,13 @@
     max-width: 100%;
   }
 
+  p {
+    a {
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+  }
+
   &.mobile-content > h1,
   &.mobile-content > h2,
   &.mobile-content > h3,
