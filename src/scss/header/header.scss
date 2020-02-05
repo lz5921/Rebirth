@@ -115,6 +115,7 @@
   .main-header {
     background-color: $dark-background-color;
     &.top-nav {
+      background-color: transparent;
       .header-navbar {
         .navbar-brand {
           .navbar-brand-logo {

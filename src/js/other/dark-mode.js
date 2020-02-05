@@ -8,6 +8,7 @@ const darkMode = (window, $) => {
   setTimeout(() => {
     getColorMode = window.sessionStorage.colorMode ? window.sessionStorage.colorMode.trim() : getComputedStyle(document.documentElement).getPropertyValue('--color-content').trim();
     if (getColorMode === 'dark') {
+      window.$('.click-dark').remove();
       window.document.documentElement.setAttribute('data-theme', 'dark');
       loadStyles([{
         url: darkCss,
