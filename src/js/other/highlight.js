@@ -23,32 +23,28 @@ const highlight = (window) => {
       url: 'https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.7.0/dist/highlightjs-line-numbers.min.js'
     }
   ]).then(async () => {
-    // const promisel = new Promise((resolve, reject) => {
-    //   codeBlocks.forEach((block, index) => {
-    //     block.classList.add('hljs');
-    //     const lang = blockLanguage(block);
-    //     const hasLang = window.hljs.listLanguages().indexOf(lang) === -1 && lang !== 'html' && langList.indexOf(lang) === -1;
-    //     if (hasLang) {
-    //       langList.push(lang);
-    //       loadScripts([{
-    //         id: `highlight-${lang}-js`,
-    //         url: `https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/${lang}.min.js`
-    //       }]).then(() => {
-    //         console.log('dddd');
-    //       });
-    //     }
-    //
-    //     codeBlocks.length === index + 1 ? resolve() : null;
-    //   });
-    // });
+    const promisel = new Promise((resolve, reject) => {
+      codeBlocks.forEach((block, index) => {
+        block.classList.add('hljs');
+        const lang = blockLanguage(block);
+        const hasLang = window.hljs.listLanguages().indexOf(lang) === -1 && lang !== 'html' && langList.indexOf(lang) === -1;
+        if (hasLang) {
+          langList.push(lang);
+          loadScripts([{
+            id: `highlight-${lang}-js`,
+            url: `https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/languages/${lang}.min.js`
+          }]).then(() => {
+            resolve(window.hljs);
+          });
+        }
+      });
+    });
 
-    // await codeBlocks.forEach(block => {
-    //   window.hljs.highlightBlock(block);
-    // });
-    // promisel.then((aa) => {
-    //   console.log(aa);
-    //   console.log(window.hljs.listLanguages());
-    // });
+    promisel.then((hljs) => {
+      codeBlocks.forEach(block => {
+        hljs.highlightBlock(block);
+      });
+    });
   });
 };
 
