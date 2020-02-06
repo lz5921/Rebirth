@@ -32,19 +32,19 @@ export const loadScripts = (scripts) => {
   function get(src) {
     return new Promise(function (resolve, reject) {
       const el = document.createElement('script');
-      el.async = true;
+      el.id = src.id;
       el.addEventListener('load', function () {
-        resolve(src);
+        resolve(src.url);
       }, false);
       el.addEventListener('error', function () {
-        reject(src);
+        reject(src.url);
       }, false);
-      el.src = src;
+      el.src = src.url;
       (document.getElementsByTagName('body')[0] || document.getElementsByTagName('head')[0]).appendChild(el);
     });
   }
 
-  const myPromises = scripts.map(function (script, index) {
+  const myPromises = scripts.map(function (script) {
     return get(script);
   });
 
@@ -74,7 +74,7 @@ export const loadStyles = (scripts) => {
     });
   }
 
-  const myPromises = scripts.map(function (script, index) {
+  const myPromises = scripts.map(function (script) {
     return get(script);
   });
 
