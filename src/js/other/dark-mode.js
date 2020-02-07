@@ -1,8 +1,9 @@
 import {loadStyles} from '../untils';
 
 const darkMode = (window, $) => {
-  const lightCss = 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/default.min.css';
-  const darkCss = 'https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.0/build/styles/tomorrow-night-bright.min.css';
+  const codeBlocks = window.document.querySelectorAll('.post-content pre>code');
+  const lightCss = 'https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism.min.css';
+  const darkCss = 'https://cdn.jsdelivr.net/npm/prismjs@1.19.0/themes/prism-tomorrow.min.css';
   let getColorMode = null;
   // 初始化页面
   setTimeout(() => {
@@ -10,16 +11,20 @@ const darkMode = (window, $) => {
     if (getColorMode === 'dark') {
       window.$('.click-dark').remove();
       window.document.documentElement.setAttribute('data-theme', 'dark');
-      loadStyles([{
-        url: darkCss,
-        id: 'highlight-css'
-      }]);
+      if (codeBlocks.length !== 0) {
+        loadStyles([{
+          url: darkCss,
+          id: 'prism-css'
+        }]);
+      }
     } else {
       window.document.documentElement.setAttribute('data-theme', 'light');
-      loadStyles([{
-        url: lightCss,
-        id: 'highlight-css'
-      }]);
+      if (codeBlocks.length !== 0) {
+        loadStyles([{
+          url: lightCss,
+          id: 'prism-css'
+        }]);
+      }
     }
   }, 0);
   // 手动切换
@@ -30,18 +35,22 @@ const darkMode = (window, $) => {
       window.sessionStorage.setItem('colorMode', 'light');
       window.document.documentElement.setAttribute('data-theme', 'light');
       window.document.documentElement.style.setProperty('--color-content', 'light');
-      loadStyles([{
-        url: lightCss,
-        id: 'highlight-css'
-      }]);
+      if (codeBlocks.length !== 0) {
+        loadStyles([{
+          url: lightCss,
+          id: 'prism-css'
+        }]);
+      }
     } else {
       window.sessionStorage.setItem('colorMode', 'dark');
       window.document.documentElement.setAttribute('data-theme', 'dark');
       window.document.documentElement.style.setProperty('--color-content', 'dark');
-      loadStyles([{
-        url: darkCss,
-        id: 'highlight-css'
-      }]);
+      if (codeBlocks.length !== 0) {
+        loadStyles([{
+          url: darkCss,
+          id: 'prism-css'
+        }]);
+      }
     }
   });
 };
