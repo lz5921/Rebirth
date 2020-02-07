@@ -1,10 +1,15 @@
 import {loadScripts, loadStyles} from '../untils';
+import {loadingIcon} from '../untils/icon';
 
-const prism = (window) => {
+const prism = async (window) => {
+  // Prismjs 库地址
   const prismSrc = `https://cdn.jsdelivr.net/npm/prismjs@1.19.0`;
-  const codeBlocks = window.document.querySelectorAll('.post-content pre>code');
+  // 高亮语法块
+  const codeBlocks = await window.document.querySelectorAll('.post-content pre>code');
+  // 如果语法块不处理
   if (codeBlocks.length === 0) return false;
-  loadStyles([
+  // 异步加载语法高亮样式脚本
+  await loadStyles([
     {
       id: 'prism-line-numbers-css',
       url: `${prismSrc}/plugins/line-numbers/prism-line-numbers.min.css`
@@ -14,38 +19,56 @@ const prism = (window) => {
       url: `${prismSrc}/plugins/toolbar/prism-toolbar.min.css`
     }
   ]);
-  loadScripts([
+  // 异步加载语法高亮脚本
+  await loadScripts([
     {
       id: 'prism-core-js',
       url: `${prismSrc}/components/prism-core.min.js`
     },
     {
-      id: 'prism-line-numbers-js',
-      url: `${prismSrc}/plugins/line-numbers/prism-line-numbers.min.js`
-    },
-    {
-      id: 'prism-prism-toolbar-js',
-      url: `${prismSrc}/plugins/toolbar/prism-toolbar.min.js`
-    },
-    {
-      id: 'prism-show-language-js',
-      url: `${prismSrc}/plugins/show-language/prism-show-language.min.js`
+      id: 'prism-autoloader-js',
+      url: `${prismSrc}/plugins/autoloader/prism-autoloader.min.js`
     }
-  ]).then(() => {
-    loadScripts([
+  ]).then(async () => {
+    // 回调遍历语法块添加 “行数” 类名
+    await codeBlocks.forEach(block => {
+      block.parentNode.classList.add('overflow-hidden', 'line-numbers');
+      // 添加 loading 罩层
+      const loadingCover = window.document.createElement('div');
+      loadingCover.id = 'pre-loading';
+      loadingCover.className = 'd-flex justify-content-center align-items-center pre-block-loading';
+      loadingCover.innerHTML = `<div class="loading"><div class="d-flex justify-content-center text-center loading-icon">${loadingIcon}</div><div class="text-center loading-text"><span>载入代码中...</span></div></div>`;
+      const getCodeParen = block.parentNode;
+      getCodeParen.insertBefore(loadingCover, block);
+    });
+    // 载入依赖 Prismjs 其他脚本
+    await loadScripts([
       {
-        id: 'prism-autoloader-js',
-        url: `${prismSrc}/plugins/autoloader/prism-autoloader.min.js`
+        id: 'prism-prism-toolbar-js',
+        url: `${prismSrc}/plugins/toolbar/prism-toolbar.min.js`
+      },
+      {
+        id: 'prism-show-language-js',
+        url: `${prismSrc}/plugins/show-language/prism-show-language.min.js`
+      },
+      {
+        id: 'prism-line-numbers-js',
+        url: `${prismSrc}/plugins/line-numbers/prism-line-numbers.min.js`
       }
-    ]).then(() => {
-      codeBlocks.forEach((block, index) => {
+    ]).then(async () => {
+      await codeBlocks.forEach(block => {
         if (block.classList.contains('language-html')) {
           block.classList.remove('language-html');
           block.classList.add('language-markup');
         }
-        block.parentElement.classList.add('line-numbers');
         window.Prism.plugins.autoloader.languages_path = `${prismSrc}/components/`;
         window.Prism.highlightAll();
+
+        // 移除 loading 罩层
+        setTimeout(() => {
+          block.parentNode.classList.remove('overflow-hidden');
+          window.document.querySelector('#pre-loading').remove();
+        }, 1000);
       });
     });
   });
