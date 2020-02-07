@@ -367,6 +367,10 @@
     table thead th {
       background: #000;
     }
+
+    hr {
+      border-bottom: 1px solid $dark-main-color;
+    }
   }
 }
 

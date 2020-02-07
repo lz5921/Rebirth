@@ -23,7 +23,7 @@
   .main-content {
     .post-copyright {
       border-left: 4px solid $main-color;
-      background-color: #000;
+      background-color: $dark-skeleton-color;
 
       li {
         a {
