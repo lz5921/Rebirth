@@ -25,10 +25,6 @@ const prism = async (window) => {
     {
       id: 'prism-core-js',
       url: `${prismSrc}/components/prism-core.min.js`
-    },
-    {
-      id: 'prism-autoloader-js',
-      url: `${prismSrc}/plugins/autoloader/prism-autoloader.min.js`
     }
   ]).then(async () => {
     // 回调遍历语法块添加 “行数” 类名
@@ -42,10 +38,12 @@ const prism = async (window) => {
       const getCodeParen = block.parentNode;
       getCodeParen.insertBefore(loadingCover, block);
     });
-    // 自动化高亮库
-    window.Prism.plugins.autoloader.languages_path = `${prismSrc}/components/`;
     // 载入依赖 Prismjs 其他脚本
     await loadScripts([
+      {
+        id: 'prism-autoloader-js',
+        url: `${prismSrc}/plugins/autoloader/prism-autoloader.min.js`
+      },
       {
         id: 'prism-prism-toolbar-js',
         url: `${prismSrc}/plugins/toolbar/prism-toolbar.min.js`
@@ -55,6 +53,8 @@ const prism = async (window) => {
         url: `${prismSrc}/plugins/line-numbers/prism-line-numbers.min.js`
       }
     ]).then(async () => {
+      // 自动化高亮库
+      window.Prism.plugins.autoloader.languages_path = `${prismSrc}/components/`;
       // 注册按钮 - 显示语言
       window.Prism.plugins.toolbar.registerButton('show-language', (env) => {
         const button = document.createElement('div');

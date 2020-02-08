@@ -31,7 +31,12 @@ export const baseToast = ($, options) => {
 </div>
 `;
   $(toastParDom).append(toastTemplate);
-  $(`#${toastId + timeTmp}`).toast(toastOptions).toast('show');
+  $(`#${toastId + timeTmp}`)
+    .toast(toastOptions)
+    .toast('show')
+    .on('hidden.bs.toast', function () {
+      $(this).remove();
+    });
 };
 
 const toasts = (window, $) => {

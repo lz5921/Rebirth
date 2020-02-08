@@ -1,7 +1,7 @@
 <main class="main-content">
   <div class="container-sm">
-    <div class="row">
-      <article class="borderbox post-content">
+    <div class="row post-content-main">
+      <article class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 px-0 borderbox post-content article-main">
         <!--kg-card-begin: markdown--><h3 id="0x0">0x0 前言</h3>
         <p>因学习<code>Flutter</code>需要故把<code>Dart</code>基础知识也看了遍，前端开发学习不算是太吃力，和<code>JavaScript</code>语法差不多，值得注意的是<code>Dart</code>是强类型编程语言，很多地方需要强制规范。学习之前需要注意下面的坑：</p>
         <pre><code class="language-dart">// 定义一个函数
@@ -277,7 +277,7 @@ assert(say('Bob', 'Howdy') ==
   print('gifts: $gifts');
 }
 </code></pre>
-        <h4 id="0x6">0x6 函数是一等对象</h4>
+        <h3 id="0x6">0x6 函数是一等对象</h3>
         <p>一个函数可以作为另一个函数的参数。 例如：</p>
         <pre><code class="language-dart">void printElement(int element) {
   print(element);
@@ -342,7 +342,7 @@ assert(urlString.startsWith('https'));
         <p>assert 的第一个参数可以是解析为布尔值的任何表达式。 如果表达式结果为 true ， 则断言成功，并继续执行。 如果表达式结果为 false ， 则断言失败，并抛出异常 (<a href="https://api.dartlang.org/stable/dart-core/AssertionError-class.html">AssertionError</a>) 。</p>
         <h3 id="0x9">0x9 类</h3>
         <p>Dart 是一种基于类和 mixin 继承机制的面向对象的语言。 每个对象都是一个类的实例，所有的类都继承于 <a href="https://api.dartlang.org/stable/dart-core/Object-class.html">Object.</a> 。 基于 <strong>Mixin 继承</strong>意味着每个类（除 Object 外） 都只有一个超类， 一个类中的代码可以在其他多个继承类中重复使用。</p>
-        <h4 id="0x10">0x10 使用类的成员变量</h4>
+        <h3 id="0x10">0x10 使用类的成员变量</h3>
         <p>对象的由函数和数据（即方法和实例变量）组成。 方法的调用要通过对象来完成： 调用的方法可以访问其对象的其他函数和数据。</p>
         <p>使用 (<code>.</code>) 来引用实例对象的变量和方法：</p>
         <pre><code class="language-dart">var p = Point(2, 2);
@@ -400,145 +400,158 @@ p?.y = 4;
   &lt;/div&gt;
 &lt;/template&gt;
 </code></pre>
+        <h1 id="h11">测试1</h1>
+        <h2 id="h12">测试2</h2>
+        <h3 id="h13">测试3</h3>
+        <h3 id="h23">测试3</h3>
+        <h3 id="h33">测试31</h3>
+        <h3 id="h43">测试32</h3>
+        <h3 id="h53">测试33</h3>
+        <h4 id="h14">测试4</h4>
         <!--kg-card-end: markdown-->
       </article>
-      <section class="post-donation text-center w-100">
-        <button type="button" class="btn btn-donation" data-toggle="collapse" data-target="#collapseDonation" aria-expanded="false" aria-controls="collapseDonation" title="捐赠">
-          <i class="fas fa-coffee"></i>
-        </button>
-        <div class="collapse collapse-donation" id="collapseDonation">
-          <div class="card card-body card-collapse">
-            <div class="row">
-              <div class="col-sm">
-                <figure class="figure">
-                  <img src="https://img.alicdn.com/imgextra/i4/2038135983/O1CN011u4G8M87EOv3N6Q_!!2038135983.jpg" alt="支付宝捐赠" title="请使用支付宝扫一扫进行捐赠">
-                  <figcaption class="figure-caption">请使用支付宝扫一扫进行捐赠</figcaption>
-                </figure>
-              </div>
-              <div class="col-sm">
-                <figure class="figure">
-                  <img src="https://img.alicdn.com/imgextra/i1/2038135983/O1CN012t8d2E1u4G8KbRFYp_!!2038135983.png" alt="微信捐赠" title="请使用微信扫一扫进行赞赏">
-                  <figcaption class="figure-caption">请使用微信扫一扫进行赞赏</figcaption>
-                </figure>
-              </div>
+      <div class="d-none d-sm-none d-md-block col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 px-0 article-toc-area">
+        <nav id="site-toc" data-toggle="toc" class="sticky-top article-toc-nav">
+          <div class="toc-title">文章目录：</div>
+        </nav>
+      </div>
+    </div>
+    <section class="post-donation text-center w-100">
+      <button type="button" class="btn btn-donation" data-toggle="collapse" data-target="#collapseDonation" aria-expanded="false" aria-controls="collapseDonation" title="捐赠">
+        <i class="fas fa-coffee"></i>
+      </button>
+      <div class="collapse collapse-donation" id="collapseDonation">
+        <div class="card card-body card-collapse">
+          <div class="row">
+            <div class="col-sm">
+              <figure class="figure">
+                <img src="https://img.alicdn.com/imgextra/i4/2038135983/O1CN011u4G8M87EOv3N6Q_!!2038135983.jpg" alt="支付宝捐赠" title="请使用支付宝扫一扫进行捐赠">
+                <figcaption class="figure-caption">请使用支付宝扫一扫进行捐赠</figcaption>
+              </figure>
+            </div>
+            <div class="col-sm">
+              <figure class="figure">
+                <img src="https://img.alicdn.com/imgextra/i1/2038135983/O1CN012t8d2E1u4G8KbRFYp_!!2038135983.png" alt="微信捐赠" title="请使用微信扫一扫进行赞赏">
+                <figcaption class="figure-caption">请使用微信扫一扫进行赞赏</figcaption>
+              </figure>
             </div>
           </div>
         </div>
-      </section>
-      <ul class="post-copyright">
-        <li class="post-copyright-author">
-          <strong>文章作者： </strong>
-          淮城一只猫
-        </li>
-        <li class="post-copyright-link">
-          <strong>文章链接：</strong>
-          <a href="#" title="测试">https://iiong.com/测试</a>
-        </li>
-        <li class="post-copyright-license">
-          <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-        </li>
-      </ul>
-      <section class="d-flex justify-content-between align-items-center mx-3 mx-sm-0 post-author-footer">
-        <section class="author-card d-flex justify-content-between align-items-center">
-          <img class="author-profile-image" src="//cn.gravatar.com/avatar/ca4628a0863a739cb67a355ea4c567a3?s=250&amp;d=mm&amp;r=x" alt="User Name">
-          <section class="author-card-content">
-            <h4 class="author-card-name">
-              <a href="/author/">淮城一只猫</a>
-            </h4>
-            <p>永远年轻，永远热泪盈眶！</p>
-          </section>
-        </section>
-        <div class="post-footer-right">
-          <a class="author-card-button" href="/author/">更多文章</a>
-        </div>
-      </section>
-      <aside class="post-read-more mx-3 mx-sm-0">
-        <div class="row read-next-feed">
-          <div class="col-lg px-0 px-sm-3 d-flex min-h-300 post-read-more-item">
-            <article class="read-next-card" style="background-image: url(https://demo.ghost.io/content/images/size/w600/2017/07/blog-cover.jpg)">
-              <header class="read-next-card-header">
-                <small class="read-next-card-header-sitetitle">&mdash; 淮城一只猫 &mdash;</small>
-                <h3 class="read-next-card-header-title">
-                  <a href="#">编程技术</a>
-                </h3>
-              </header>
-              <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"></path></svg></div>
-              <div class="read-next-card-content">
-                <ul>
-                  <li><a href="#">PHP 入门</a></li>
-                  <li><a href="#">编写 JavaScript 类库文件</a></li>
-                  <li><a href="#">如何招魂</a></li>
-                </ul>
-              </div>
-              <footer class="read-next-card-footer">
-                <a href="#">查看更多文章 →</a>
-              </footer>
-            </article>
-          </div>
-          <div class="col-lg px-0 px-sm-3 d-flex min-h-300 post-read-more-item">
-            <article class="post-read-next">
-              <a class="post-read-next-image-link" href="#">
-                <img class="post-read-next-image" src="https://casper.ghost.org/v2.0.0/images/welcome-to-ghost.jpg" alt="#">
-              </a>
-              <div class="post-read-next-content">
-                <a class="post-read-next-content-link" href="#">
-                  <header class="post-read-next-header">
-                    <span class="post-read-next-tags">奇淫技巧</span>
-                    <h2 class="post-read-next-title">文章标题</h2>
-                  </header>
-                  <section class="post-read-next-excerpt">
-                    <p>这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章</p>
-                  </section>
-                </a>
-                <footer class="post-read-next-meta">
-                  <ul class="author-list">
-                    <li class="author-list-item">
-                      <a href="#" class="static-avatar">
-                        <img class="author-profile-image" src="//cn.gravatar.com/avatar/ca4628a0863a739cb67a355ea4c567a3?s=250&amp;d=mm&amp;r=x" alt="作者">
-                        <span class="author-profile-name">淮城一只猫</span>
-                      </a>
-                    </li>
-                  </ul>
-                  <span class="reading-time">1 分钟阅读</span>
-                </footer>
-              </div>
-            </article>
-          </div>
-          <div class="col-xl px-0 px-sm-3 d-flex min-h-300 post-read-more-item">
-            <article class="post-read-next">
-              <a class="post-read-next-image-link" href="#">
-                <img class="post-read-next-image" src="https://casper.ghost.org/v2.0.0/images/welcome-to-ghost.jpg" alt="#">
-              </a>
-              <div class="post-read-next-content">
-                <a class="post-read-next-content-link" href="#">
-                  <header class="post-read-next-header">
-                    <span class="post-read-next-tags">奇淫技巧</span>
-                    <h2 class="post-read-next-title">文章标题</h2>
-                  </header>
-                  <section class="post-read-next-excerpt">
-                    <p>这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章</p>
-                  </section>
-                </a>
-                <footer class="post-read-next-meta">
-                  <ul class="author-list">
-                    <li class="author-list-item">
-                      <a href="#" class="static-avatar">
-                        <img class="author-profile-image" src="//cn.gravatar.com/avatar/ca4628a0863a739cb67a355ea4c567a3?s=250&amp;d=mm&amp;r=x" alt="作者">
-                        <span class="author-profile-name">淮城一只猫</span>
-                      </a>
-                    </li>
-                  </ul>
-                  <span class="reading-time">1 分钟阅读</span>
-                </footer>
-              </div>
-            </article>
-          </div>
-        </div>
-      </aside>
-      <div id="comments" class="mx-3 mx-sm-0 w-100 post-comments">
-        <!-- 这里放置评论框 -->
-        这里放置评论框，用于第三方评论或者博客平台评论。评论框样式可以自己自由发挥定制！
       </div>
+    </section>
+    <ul class="post-copyright">
+      <li class="post-copyright-author">
+        <strong>文章作者： </strong>
+        淮城一只猫
+      </li>
+      <li class="post-copyright-link">
+        <strong>文章链接：</strong>
+        <a href="#" title="测试">https://iiong.com/测试</a>
+      </li>
+      <li class="post-copyright-license">
+        <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+      </li>
+    </ul>
+    <section class="d-flex justify-content-between align-items-center post-author-footer">
+      <section class="author-card d-flex justify-content-between align-items-center">
+        <img class="author-profile-image" src="//cn.gravatar.com/avatar/ca4628a0863a739cb67a355ea4c567a3?s=250&amp;d=mm&amp;r=x" alt="User Name">
+        <section class="author-card-content">
+          <h4 class="author-card-name">
+            <a href="/author/">淮城一只猫</a>
+          </h4>
+          <p>永远年轻，永远热泪盈眶！</p>
+        </section>
+      </section>
+      <div class="post-footer-right">
+        <a class="author-card-button" href="/author/">更多文章</a>
+      </div>
+    </section>
+    <aside class="post-read-more">
+      <div class="row read-next-feed">
+        <div class="col-lg px-0 px-sm-3 d-flex min-h-300 post-read-more-item">
+          <article class="read-next-card" style="background-image: url(https://demo.ghost.io/content/images/size/w600/2017/07/blog-cover.jpg)">
+            <header class="read-next-card-header">
+              <small class="read-next-card-header-sitetitle">&mdash; 淮城一只猫 &mdash;</small>
+              <h3 class="read-next-card-header-title">
+                <a href="#">编程技术</a>
+              </h3>
+            </header>
+            <div class="read-next-divider"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14.5s2 3 5 3 5.5-2.463 5.5-5.5S21 6.5 18 6.5c-5 0-7 11-12 11C2.962 17.5.5 15.037.5 12S3 6.5 6 6.5s4.5 3.5 4.5 3.5"></path></svg></div>
+            <div class="read-next-card-content">
+              <ul>
+                <li><a href="#">PHP 入门</a></li>
+                <li><a href="#">编写 JavaScript 类库文件</a></li>
+                <li><a href="#">如何招魂</a></li>
+              </ul>
+            </div>
+            <footer class="read-next-card-footer">
+              <a href="#">查看更多文章 →</a>
+            </footer>
+          </article>
+        </div>
+        <div class="col-lg px-0 px-sm-3 d-flex min-h-300 post-read-more-item">
+          <article class="post-read-next">
+            <a class="post-read-next-image-link" href="#">
+              <img class="post-read-next-image" src="https://casper.ghost.org/v2.0.0/images/welcome-to-ghost.jpg" alt="#">
+            </a>
+            <div class="post-read-next-content">
+              <a class="post-read-next-content-link" href="#">
+                <header class="post-read-next-header">
+                  <span class="post-read-next-tags">奇淫技巧</span>
+                  <h2 class="post-read-next-title">文章标题</h2>
+                </header>
+                <section class="post-read-next-excerpt">
+                  <p>这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章</p>
+                </section>
+              </a>
+              <footer class="post-read-next-meta">
+                <ul class="author-list">
+                  <li class="author-list-item">
+                    <a href="#" class="static-avatar">
+                      <img class="author-profile-image" src="//cn.gravatar.com/avatar/ca4628a0863a739cb67a355ea4c567a3?s=250&amp;d=mm&amp;r=x" alt="作者">
+                      <span class="author-profile-name">淮城一只猫</span>
+                    </a>
+                  </li>
+                </ul>
+                <span class="reading-time">1 分钟阅读</span>
+              </footer>
+            </div>
+          </article>
+        </div>
+        <div class="col-xl px-0 px-sm-3 d-flex min-h-300 post-read-more-item">
+          <article class="post-read-next">
+            <a class="post-read-next-image-link" href="#">
+              <img class="post-read-next-image" src="https://casper.ghost.org/v2.0.0/images/welcome-to-ghost.jpg" alt="#">
+            </a>
+            <div class="post-read-next-content">
+              <a class="post-read-next-content-link" href="#">
+                <header class="post-read-next-header">
+                  <span class="post-read-next-tags">奇淫技巧</span>
+                  <h2 class="post-read-next-title">文章标题</h2>
+                </header>
+                <section class="post-read-next-excerpt">
+                  <p>这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章这是一段文章</p>
+                </section>
+              </a>
+              <footer class="post-read-next-meta">
+                <ul class="author-list">
+                  <li class="author-list-item">
+                    <a href="#" class="static-avatar">
+                      <img class="author-profile-image" src="//cn.gravatar.com/avatar/ca4628a0863a739cb67a355ea4c567a3?s=250&amp;d=mm&amp;r=x" alt="作者">
+                      <span class="author-profile-name">淮城一只猫</span>
+                    </a>
+                  </li>
+                </ul>
+                <span class="reading-time">1 分钟阅读</span>
+              </footer>
+            </div>
+          </article>
+        </div>
+      </div>
+    </aside>
+    <div id="comments" class="w-100 post-comments">
+      <!-- 这里放置评论框 -->
+      这里放置评论框，用于第三方评论或者博客平台评论。评论框样式可以自己自由发挥定制！
     </div>
   </div>
 </main>

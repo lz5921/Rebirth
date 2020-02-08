@@ -5,6 +5,7 @@ import './menu';
 import './menu/search';
 import './global/navBar';
 import './global/tooltip';
+import './post/content-toc';
 import './other/prism';
 import './other/device';
 import './other/to-top';
