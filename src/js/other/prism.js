@@ -1,5 +1,6 @@
 import {loadScripts, loadStyles} from '../untils';
 import {loadingIcon} from '../untils/icon';
+import {baseToast} from './toasts';
 
 const prism = async (window) => {
   // Prismjs 库地址
@@ -41,6 +42,8 @@ const prism = async (window) => {
       const getCodeParen = block.parentNode;
       getCodeParen.insertBefore(loadingCover, block);
     });
+    // 自动化高亮库
+    window.Prism.plugins.autoloader.languages_path = `${prismSrc}/components/`;
     // 载入依赖 Prismjs 其他脚本
     await loadScripts([
       {
@@ -48,20 +51,49 @@ const prism = async (window) => {
         url: `${prismSrc}/plugins/toolbar/prism-toolbar.min.js`
       },
       {
-        id: 'prism-show-language-js',
-        url: `${prismSrc}/plugins/show-language/prism-show-language.min.js`
-      },
-      {
         id: 'prism-line-numbers-js',
         url: `${prismSrc}/plugins/line-numbers/prism-line-numbers.min.js`
       }
     ]).then(async () => {
+      // 注册按钮 - 显示语言
+      window.Prism.plugins.toolbar.registerButton('show-language', (env) => {
+        const button = document.createElement('div');
+        button.className = 'show-language';
+        button.innerHTML = `<i class="fas fa-code"></i> ${env.language}`;
+        return button;
+      });
+      // 注册按钮 - 复制代码
+      window.Prism.plugins.toolbar.registerButton('select-code', (env) => {
+        const button = document.createElement('button');
+        button.className = 'select-code';
+        button.innerHTML = '复制代码';
+        button.addEventListener('click', () => {
+          if (document.body.createTextRange) {
+            const range = document.body.createTextRange();
+            range.moveToElementText(env.element);
+            range.select();
+          } else if (window.getSelection) {
+            const selection = window.getSelection();
+            const range = document.createRange();
+            range.selectNodeContents(env.element);
+            selection.removeAllRanges();
+            selection.addRange(range);
+          }
+
+          baseToast(window.jQuery, {
+            id: 'prism-toast',
+            content: '请按 Ctrl + C / Command + C 进行复制代码！'
+          });
+        });
+        return button;
+      });
+      // 遍历 Dom
       await codeBlocks.forEach(block => {
         if (block.classList.contains('language-html')) {
           block.classList.remove('language-html');
           block.classList.add('language-markup');
         }
-        window.Prism.plugins.autoloader.languages_path = `${prismSrc}/components/`;
+        // 初始化高亮
         window.Prism.highlightAll();
 
         // 移除 loading 罩层
