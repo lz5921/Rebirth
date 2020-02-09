@@ -2,7 +2,7 @@
   <div class="container-sm">
     <div class="row post-content-main">
       <article class="col-12 col-sm-12 col-md-9 col-lg-9 col-xl-9 px-0 borderbox post-content article-main">
-        <!--kg-card-begin: markdown--><h3 id="0x0">0x0 前言</h3>
+        <!--kg-card-begin: markdown--><h3 id="test0">0x0 前言</h3>
         <p>因学习<code>Flutter</code>需要故把<code>Dart</code>基础知识也看了遍，前端开发学习不算是太吃力，和<code>JavaScript</code>语法差不多，值得注意的是<code>Dart</code>是强类型编程语言，很多地方需要强制规范。学习之前需要注意下面的坑：</p>
         <pre><code class="language-dart">// 定义一个函数
 printInteger(int aNumber) {
@@ -26,7 +26,7 @@ void main() {
           <li>Dart 语法中包含 <em>表达式（ expressions ）</em>（有运行时值）和 <em>语句（ statements ）</em>（没有运行时值）。 例如，<a href="https://www.dartcn.com/guides/language/language-tour#conditional-expressions">条件表达式</a> <code>condition ? expr1 : expr2</code> 的值可能是 <code>expr1</code> 或 <code>expr2</code> 。 将其与 <a href="https://www.dartcn.com/guides/language/language-tour#if-%E5%92%8C-else">if-else 语句</a> 相比较，if-else 语句没有值。 一条语句通常包含一个或多个表达式，相反表达式不能直接包含语句。</li>
           <li>Dart 工具提示两种类型问题：<em>警告_和_错误</em>。 警告只是表明代码可能无法正常工作，但不会阻止程序的执行。 错误可能是编译时错误或者运行时错误。 编译时错误会阻止代码的执行; 运行时错误会导致代码在执行过程中引发 [异常]（#exception）。</li>
         </ul>
-        <h3 id="0x1">0x1 关键词</h3>
+        <h3 id="ox1">0x1 关键词</h3>
         <table>
           <thead>
           <tr>
@@ -131,7 +131,7 @@ void main() {
             不能在标记为 <code>async</code> ，<code>async*</code> 或 <code>sync*</code> 的任何函数体中使用 <code>await</code> 或 <code>yield</code> 作为标识符。</li>
         </ul>
         <p>关键字表中的剩余单词都是<strong>保留字</strong>。 不能将保留字用作标识符。</p>
-        <h3 id="0x2">0x2 变量</h3>
+        <h3 id="test2">0x2 变量</h3>
         <p>创建一个变量并进行初始化:</p>
         <pre><code class="language-dart">var name = 'Bob';
 </code></pre>
@@ -143,7 +143,7 @@ void main() {
         <pre><code class="language-dart">String name = 'Bob';
 </code></pre>
         <p>如果声明变量没有赋值，那么默认值则是<code>null</code>，即使变量是数字 类型默认值也是<code>null</code>，因为在<code>Dart</code>中一切都是对象，<code>数字类型</code>也不例外。</p>
-        <h3 id="0x3">0x3 常量</h3>
+        <h3 id="test3">0x3 常量</h3>
         <p>如果需要声明一个在程序运行中用不被修改的变量，可以使用<code>final</code>和<code>const</code>声明：</p>
         <pre><code class="language-dart">final name = 'Bob';
 final String nickname = 'Bobby';
@@ -153,7 +153,7 @@ const double atm = 1.01325 * bar; // 标准气压
         <blockquote>
           <p>俩者区别：<code>const</code>比<code>final</code>更加严格。<code>final</code>只是要求变量在初始化后值不变，但通过<code>final</code>，无法在**编译时（运行之前）**知道这个变量的值；而<code>const</code>所修饰的是编译时常量，我们在编译时就已经知道了它的值，显然，它的值也是不可改变的。</p>
         </blockquote>
-        <h3 id="0x4">0x4 内建类型</h3>
+        <h3 id="test4">0x4 内建类型</h3>
         <p>Dart 语言支持以下内建类型：</p>
         <ul>
           <li>Number</li>
@@ -195,7 +195,7 @@ var nobleGases = {
         <p>在 Dart 中， Rune 用来表示字符串中的 UTF-32 编码字符。例如<code>emoji</code>表情，特殊图形字体等等可以用该类型表示。</p>
         <p><strong>Symbol:</strong></p>
         <p>一个 Symbol 对象表示 Dart 程序中声明的运算符或者标识符。 你也许永远都不需要使用 Symbol ，但要按名称引用标识符的 API 时， Symbol 就非常有用了。 因为代码压缩后会改变标识符的名称，但不会改变标识符的符号。 通过字面量 Symbol ，也就是标识符前面添加一个 <code>#</code> 号，来获取标识符的 Symbol 。</p>
-        <h3 id="0x5">0x5 函数</h3>
+        <h3 id="test5">0x5 函数</h3>
         <p>Dart 是一门真正面向对象的语言， 甚至其中的函数也是对象，并且有它的类型 <a href="https://api.dartlang.org/stable/dart-core/Function-class.html">Function</a> 。 这也意味着函数可以被赋值给变量或者作为参数传递给其他函数。 也可以把 Dart 类的实例当做方法来调用。</p>
         <p>标准写法：</p>
         <pre><code class="language-dart">bool isNoble(int atomicNumber) {
@@ -277,7 +277,7 @@ assert(say('Bob', 'Howdy') ==
   print('gifts: $gifts');
 }
 </code></pre>
-        <h3 id="0x6">0x6 函数是一等对象</h3>
+        <h3 id="test6">0x6 函数是一等对象</h3>
         <p>一个函数可以作为另一个函数的参数。 例如：</p>
         <pre><code class="language-dart">void printElement(int element) {
   print(element);
@@ -288,7 +288,7 @@ var list = [1, 2, 3];
 // 将 printElement 函数作为参数传递。
 list.forEach(printElement);
 </code></pre>
-        <h3 id="0x7">0x7 运算符</h3>
+        <h3 id="test7">0x7 运算符</h3>
         <p>这里基础内容不再详述。</p>
         <p><strong>级联运算符 (..)：</strong></p>
         <p>级联运算符 (<code>..</code>) 可以实现对同一个对像进行一系列的操作。 除了调用函数， 还可以访问同一对象上的字段属性。 这通常可以节省创建临时变量的步骤， 同时编写出更流畅的代码：</p>
@@ -315,7 +315,7 @@ button.onClick.listen((e) =&gt; window.alert('Confirmed!'));
     .build();
 </code></pre>
         <p>在返回对象的函数中谨慎使用级联操作符。</p>
-        <h3 id="0x8">0x8 控制流程语句</h3>
+        <h3 id="test8">0x8 控制流程语句</h3>
         <ul>
           <li><code>if</code> and <code>else</code></li>
           <li><code>for</code> loops</li>
@@ -340,9 +340,9 @@ assert(urlString.startsWith('https'));
     'URL ($urlString) should start with &quot;https&quot;.');
 </code></pre>
         <p>assert 的第一个参数可以是解析为布尔值的任何表达式。 如果表达式结果为 true ， 则断言成功，并继续执行。 如果表达式结果为 false ， 则断言失败，并抛出异常 (<a href="https://api.dartlang.org/stable/dart-core/AssertionError-class.html">AssertionError</a>) 。</p>
-        <h3 id="0x9">0x9 类</h3>
+        <h3 id="test9">0x9 类</h3>
         <p>Dart 是一种基于类和 mixin 继承机制的面向对象的语言。 每个对象都是一个类的实例，所有的类都继承于 <a href="https://api.dartlang.org/stable/dart-core/Object-class.html">Object.</a> 。 基于 <strong>Mixin 继承</strong>意味着每个类（除 Object 外） 都只有一个超类， 一个类中的代码可以在其他多个继承类中重复使用。</p>
-        <h3 id="0x10">0x10 使用类的成员变量</h3>
+        <h3 id="test10">0x10 使用类的成员变量</h3>
         <p>对象的由函数和数据（即方法和实例变量）组成。 方法的调用要通过对象来完成： 调用的方法可以访问其对象的其他函数和数据。</p>
         <p>使用 (<code>.</code>) 来引用实例对象的变量和方法：</p>
         <pre><code class="language-dart">var p = Point(2, 2);
@@ -360,7 +360,7 @@ num distance = p.distanceTo(Point(4, 4));
         <pre><code class="language-dart">// 如果 p 为 non-null，设置它变量 y 的值为 4。
 p?.y = 4;
 </code></pre>
-        <h3 id="0x11">0x11 泛型</h3>
+        <h3 id="test11">0x11 泛型</h3>
         <p>在 API 文档中你会发现基础数组类型 <a href="https://api.dartlang.org/stable/dart-core/List-class.html">List</a> 的实际类型是 <code>List&lt;E&gt;</code> 。 &lt;…&gt; 符号将 List 标记为 <em>泛型</em> (或 <em>参数化</em>) 类型。 这种类型具有形式化的参数。 通常情况下，使用一个字母来代表类型参数， 例如 E, T, S, K, 和 V 等。</p>
         <p>在类型安全上通常需要泛型支持， 它的好处不仅仅是保证代码的正常运行：</p>
         <ul>

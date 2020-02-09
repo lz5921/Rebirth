@@ -6,7 +6,7 @@ import './menu/search';
 import './global/navBar';
 import './global/tooltip';
 import './post/content-toc';
-import './other/prism';
+import './post/prism';
 import './other/device';
 import './other/to-top';
 import './other/dark-mode';

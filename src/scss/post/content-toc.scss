@@ -66,3 +66,21 @@
   }
 
 }
+
+@mixin dark-mode {
+  .article-toc-area {
+    .article-toc-nav {
+      .nav > li > a {
+        color: $dark-main-color;
+      }
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
+
+[data-theme="dark"] {
+  @include dark-mode;
+}

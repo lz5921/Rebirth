@@ -431,6 +431,7 @@
     .code-toolbar {
       .toolbar {
         background-color: $dark-skeleton-color;
+        border-bottom: 1px solid $dark-main-color;
         .toolbar-item {
           .show-language {
             color: $dark-main-color;

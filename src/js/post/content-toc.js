@@ -162,9 +162,10 @@ const toc = (window) => {
       $nav: navSelector,
       $scope: $('article.article-main')
     });
-    // $('.main-content').scrollspy({
-    //   target: $('.article-toc-nav')
-    // });
+    $('body').scrollspy({
+      target: $('.article-toc-nav'),
+      offset: 150
+    });
     // 跳转滑动
     $('nav.article-toc-nav ul li a').on('click', function (event) {
       $('html, body').animate({

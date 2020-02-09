@@ -1,6 +1,6 @@
 import {loadScripts, loadStyles} from '../untils';
 import {loadingIcon} from '../untils/icon';
-import {baseToast} from './toasts';
+import baseToast from '../other/toasts';
 
 const prism = async (window) => {
   // Prismjs 库地址
