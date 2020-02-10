@@ -1,3 +1,5 @@
+import baseToast from './toasts';
+
 const darkMode = (window, $) => {
   let getColorMode = null;
   // 初始化页面
@@ -12,8 +14,11 @@ const darkMode = (window, $) => {
   }, 0);
   // 手动切换
   $('.click-dark').click(event => {
+    baseToast($, {
+      id: 'dark-mode-toast',
+      content: '如果您的系统支持黑暗模式，该功能是无效的！'
+    });
     getColorMode = getComputedStyle(document.documentElement).getPropertyValue('--color-content').trim();
-    $('#highlight-css').remove();
     if (getColorMode === 'dark') {
       window.sessionStorage.setItem('colorMode', 'light');
       window.document.documentElement.setAttribute('data-theme', 'light');

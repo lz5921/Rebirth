@@ -1,5 +1,6 @@
 .main-hero {
   position: relative;
+  overflow-x: hidden;
   height: 75vh;
 
   &-bg {
@@ -28,6 +29,7 @@
     width: 100%;
     height: 100%;
     color: #fff;
+    z-index: 1;
 
     &-avatar {
       margin: 1rem 0;
@@ -66,6 +68,82 @@
       }
     }
   }
+
+  &-waves-area {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+
+    .waves-svg {
+      width: 100%;
+      height: 10rem;
+    }
+
+    .parallax > use {
+      animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+    }
+
+    .parallax > use:nth-child(1) {
+      animation-delay: -2s;
+      animation-duration: 7s;
+      fill: rgba(255,255,255, 0.7);
+    }
+
+    .parallax > use:nth-child(2) {
+      animation-delay: -3s;
+      animation-duration: 10s;
+      fill: rgba(255,255,255, 0.5);
+    }
+
+    .parallax > use:nth-child(3) {
+      animation-delay: -4s;
+      animation-duration: 13s;
+      fill: rgba(255,255,255, 0.3);
+    }
+
+    .parallax > use:nth-child(4) {
+      animation-delay: -5s;
+      animation-duration: 20s;
+      fill: rgba(255,255,255, 1);
+    }
+
+    @keyframes move-forever {
+      0% {
+        transform: translate3d(-90px, 0, 0);
+      }
+      100% {
+        transform: translate3d(85px, 0, 0);
+      }
+    }
+  }
+
+  &-header {
+    width: 100%;
+    height: 18rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    border-style: solid;
+    border-width: 0 100vw 10rem 0;
+    border-color: transparent transparent $background-color transparent;
+    // 小于 768px
+    @media (max-width: 767.98px) {
+      & {
+        border-width: 0 100vw 8rem 0;
+      }
+    }
+
+    // 小于 576px
+    @media (max-width: 575.98px) {
+      & {
+        border-width: 0 100vw 5rem 0;
+      }
+
+    }
+  }
 }
 
 @mixin dark-mode {
@@ -78,6 +156,7 @@
 
     &-content {
       color: $dark-main-hover-color;
+
       &-avatar {
         &:before {
           content: "";
@@ -87,19 +166,44 @@
           height: 6.25rem;
           border-radius: 50%;
         }
+
         &-img {
           border: none;
         }
       }
+
       &-social {
         &-links {
           color: $dark-main-color;
           transition: all 500ms ease 0ms;
+
           &:hover {
             color: $dark-main-hover-color;
           }
         }
       }
+    }
+
+    &-waves-area {
+      .parallax > use:nth-child(1) {
+        fill: rgba(38, 50, 56, 0.7);
+      }
+
+      .parallax > use:nth-child(2) {
+        fill: rgba(38, 50, 56, 0.5);
+      }
+
+      .parallax > use:nth-child(3) {
+        fill: rgba(38, 50, 56, 0.3);
+      }
+
+      .parallax > use:nth-child(4) {
+        fill: rgba(38, 50, 56, 1);
+      }
+    }
+
+    &-header {
+      border-color: transparent transparent $dark-background-color transparent;
     }
   }
 }
