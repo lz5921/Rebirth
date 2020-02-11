@@ -416,8 +416,27 @@ p?.y = 4;
         </nav>
       </div>
     </div>
-    <section class="post-donation text-center w-100">
-      <button type="button" class="btn btn-donation" data-toggle="collapse" data-target="#collapseDonation" aria-expanded="false" aria-controls="collapseDonation" title="捐赠">
+    <section class="post-tools text-center w-100">
+      <button
+         type="button"
+         class="btn site-popover btn-tools-item btn-share btn-share-popover"
+         data-container=".site-wrapper"
+         data-toggle="popover"
+         data-placement="bottom"
+         data-trigger="focus"
+         data-content="<ul class='d-flex justify-content-center align-items-center site-popover-wrapper-share'><li><a class='share-weibo' href='https://service.weibo.com/share/share.php?title=文章标题&url=文章地址&pic=文章配图' title='分享到微博' target='_blank' rel='nofollow noopener'><i class='fab fa-weibo'></i></a></li><li><a class='share-qq' href='https://connect.qq.com/widget/shareqq/index.html?url=文章地址&title=文章标题&summary=文章摘要&pics=文章配图&site=网站名称' title='分享到QQ' target='_blank' rel='nofollow noopener'><i class='fab fa-qq'></i></a></li><li><a class='share-wechat' title='分享到微信'><i class='fab fa-weixin'></i></a><div class='post-share-wechat-qr' id='wechat-qr-code-img'></div></li><li><a class='share-twitter' href='https://twitter.com/share?text=文章标题&url=文章地址' title='分享到推特' target='_blank' rel='nofollow noopener'><i class='fab fa-twitter'></i></a></li></ul>"
+      >
+        <i class="fas fa-share-alt"></i>
+      </button>
+      <button
+         type="button"
+         class="btn btn-tools-item btn-donation"
+         data-toggle="collapse"
+         data-target="#collapseDonation"
+         aria-expanded="false"
+         aria-controls="collapseDonation"
+         title="捐赠"
+      >
         <i class="fas fa-coffee"></i>
       </button>
       <div class="collapse collapse-donation" id="collapseDonation">

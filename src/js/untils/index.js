@@ -34,10 +34,10 @@ export const loadScripts = (scripts) => {
       const el = document.createElement('script');
       el.id = src.id;
       el.addEventListener('load', function () {
-        resolve(src.url);
+        resolve(src);
       }, false);
       el.addEventListener('error', function () {
-        reject(src.url);
+        reject(src);
       }, false);
       el.src = src.url;
       (document.getElementsByTagName('body')[0] || document.getElementsByTagName('head')[0]).appendChild(el);
@@ -64,10 +64,10 @@ export const loadStyles = (scripts) => {
       el.rel = 'stylesheet';
       el.id = src.id;
       el.addEventListener('load', function () {
-        resolve(src.url);
+        resolve(src);
       }, false);
       el.addEventListener('error', function () {
-        reject(src.url);
+        reject(src);
       }, false);
       el.href = src.url;
       document.getElementsByTagName('head')[0].appendChild(el);
