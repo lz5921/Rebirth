@@ -9,6 +9,7 @@ import './global/popover';
 import './post/content-toc';
 import './post/prism';
 import './post/share';
+import './post/imageZoom';
 import './other/device';
 import './other/to-top';
 import './other/dark-mode';

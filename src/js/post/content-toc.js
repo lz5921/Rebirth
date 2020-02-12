@@ -52,7 +52,7 @@ const toc = (window) => {
       },
 
       createNavList: function () {
-        return $('<ul class="nav navbar-nav article-toc"></ul>');
+        return $('<ul class="nav navbar-nav article-toc"><div class="toc-title">文章目录：</div></ul>');
       },
 
       createChildNavList: function ($parent) {

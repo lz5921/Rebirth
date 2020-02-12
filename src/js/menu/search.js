@@ -5,7 +5,7 @@
  */
 const search = (window, $) => {
   $('.click-search').click((event) => {
-    $('body').addClass('overflow-hidden').append('<div class="modal-backdrop fade show global-modal"></div>');
+    $('body').addClass('overflow-hidden').append('<div class="modal-backdrop fade show global-modal global-modal-pc-search"></div>');
     // 移除搜索界面隐藏样式
     $('.search-wrapper').show(250);
   });
@@ -15,7 +15,7 @@ const search = (window, $) => {
     // 移除搜索界面隐藏样式
     $('.search-wrapper').hide(250);
     // 移除全局遮罩层
-    $('.global-modal').remove();
+    $('.global-modal-pc-search').remove();
   });
 };
 
