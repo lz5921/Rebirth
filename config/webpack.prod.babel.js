@@ -84,7 +84,8 @@ module.exports = {
               options: {
                 ident: 'postcss',
                 plugins: () => [
-                  require('cssnano')()
+                  require('cssnano'),
+                  require('autoprefixer')
                 ]
               }
             },

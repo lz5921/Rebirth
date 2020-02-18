@@ -3,8 +3,6 @@
   "version": "1.0.1",
   "scripts": {
     "serve": "webpack-dev-server --config config/webpack.dev.babel.js --mode development ",
-    "start": "node config/server.js",
-    "start-yarn": "node config/server.js --yarn",
     "build": "webpack --config config/webpack.prod.babel.js --mode production --env.production",
     "eslint": "eslint src/**/*.js",
     "eslint-fix": "eslint src/**/*.js --fix"
