@@ -42,6 +42,15 @@
           margin: 0;
           line-height: 1.3em;
         }
+
+        .author-card-social {
+          &-links {
+            color: $main-color;
+            font-size: 1.2rem;
+            font-weight: normal;
+            margin: 0 .1rem;
+          }
+        }
       }
     }
 
