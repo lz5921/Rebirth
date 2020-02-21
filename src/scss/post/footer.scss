@@ -28,7 +28,6 @@
 
       .author-card-content {
         .author-card-name {
-          margin: 0.5rem 0 .125rem;
           padding: 0;
           font-size: 1.425rem;
 
@@ -38,18 +37,20 @@
           }
         }
 
+        .author-card-social {
+          height: 100%;
+          &-links {
+            color: rgba(0, 0, 0, .5);
+            font-size: 1rem;
+            font-weight: normal;
+            margin: 0 .1rem;
+            line-height: 2;
+          }
+        }
+
         p {
           margin: 0;
           line-height: 1.3em;
-        }
-
-        .author-card-social {
-          &-links {
-            color: $main-color;
-            font-size: 1.2rem;
-            font-weight: normal;
-            margin: 0 .1rem;
-          }
         }
       }
     }
@@ -97,14 +98,15 @@
               color: $dark-main-color;
             }
           }
-          p {
-            color: $dark-main-color;
-          }
 
           .author-card-social {
             &-links {
               color: $dark-main-color;
             }
+          }
+
+          p {
+            color: $dark-main-color;
           }
         }
       }
