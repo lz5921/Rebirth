@@ -4,7 +4,7 @@
 
 ### Ghost 主题
 
-请访问该分支：[Ghost Theme](https://github.com/JaxsonWang/rebirth/tree/ghost-theme)
+请访问该分支：[Ghost Theme](https://github.com/JaxsonWang/rebirth)
 
 ### Typecho 主题
 
