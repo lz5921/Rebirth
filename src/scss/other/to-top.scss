@@ -1,6 +1,6 @@
 .fixed-to-top {
   position: fixed;
-  z-index: 1;
+  z-index: 1020;
   transition: ease-in 250ms ease 0ms;
   background-color: #000;
   border-radius: 50%;
@@ -16,6 +16,12 @@
   i.fas {
     font-size: 2rem;
     color: #fff;
+  }
+
+  .progress-number {
+    color: #fff;
+    width: 100%;
+    font-size: 8px;
   }
 }
 
@@ -51,6 +57,10 @@
     box-shadow: 2px 2px 5px #000;
 
     i.fas {
+      color: $dark-main-color;
+    }
+
+    .progress-number {
       color: $dark-main-color;
     }
   }

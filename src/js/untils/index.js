@@ -31,6 +31,7 @@ export const removeTopNav = ($) => {
 export const loadScripts = (scripts) => {
   function get(src) {
     return new Promise(function (resolve, reject) {
+      if (document.getElementById(src.id) !== null) document.getElementById(src.id).remove();
       const el = document.createElement('script');
       el.id = src.id;
       el.addEventListener('load', function () {
@@ -59,6 +60,7 @@ export const loadScripts = (scripts) => {
 export const loadStyles = (scripts) => {
   function get(src) {
     return new Promise(function (resolve, reject) {
+      if (document.getElementById(src.id) !== null) document.getElementById(src.id).remove();
       const el = document.createElement('link');
       el.type = 'text/css';
       el.rel = 'stylesheet';
