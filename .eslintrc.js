@@ -11,8 +11,6 @@ module.exports = {
     es6: true
   },
   extends: ['eslint:recommended'],
-
-  // add your custom rules here
   rules: {
     'accessor-pairs': 2,
     'arrow-spacing': [2, {
