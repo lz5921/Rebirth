@@ -80,7 +80,7 @@ yarn build / npm run build # 编译 Ghost 可用主题
 
 ### 其他
 
-[静态页](https://github.com/JaxsonWang/rebirth/tree/master)
+[静态页](https://github.com/JaxsonWang/rebirth/tree/state-page)
 
 [Typecho 主题](https://github.com/JaydenForYou/Spring)
 
