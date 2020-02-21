@@ -7,6 +7,7 @@ import './global/navBar';
 import './global/tooltip';
 import './global/popover';
 import './post/content-toc';
+import './post/content-progress';
 import './post/prism';
 import './post/share';
 import './post/imageZoom';

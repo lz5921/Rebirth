@@ -43,6 +43,11 @@
     {{> site-mobile-sidebar}}
   </div>
   <div class="main-wrapper">
+    {{#is "post"}}
+      <div class="progress site-progress">
+        <div class="progress-bar reading-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+    {{/is}}
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
     {{{body}}}
 
