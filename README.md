@@ -2,6 +2,8 @@
 
 2020年，加油武汉!
 
+这仅仅是一份简单的静态页！
+
 ### Ghost 主题
 
 请访问该分支：[Ghost Theme](https://github.com/JaxsonWang/rebirth)
