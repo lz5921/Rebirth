@@ -15,3 +15,12 @@ import './other/to-top';
 import './other/dark-mode';
 import './other/toasts';
 import './other/scrollreveal';
+
+// Ghost 业务
+import './ghost/global';
+import './ghost/toasts';
+import './ghost/pagination';
+import './ghost/search';
+import './ghost/comment';
+import './ghost/template-links';
+import './ghost/home-sentence';

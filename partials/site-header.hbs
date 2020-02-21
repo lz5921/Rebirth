@@ -1,0 +1,14 @@
+<header class="fixed-top shadow-sm main-header scroll-reveal-header">
+  <nav class="navbar navbar-expand-lg header-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{{@site.url}}">
+        <span class="d-inline-block align-top navbar-brand-logo">{{> "icons/site-logo"}}</span>
+        {{@site.title}}
+      </a>
+      <button class="navbar-toggler sidebar-toggler" type="button" data-toggle="collapse" aria-controls="sidebar-wrapper" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      {{navigation desktop=true}}
+    </div>
+  </nav>
+</header>

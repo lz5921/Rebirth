@@ -1,13 +1,8 @@
 'use strict';
 
-const fs = require('fs');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-
-const htmlFileNames = fs.readdirSync('./src/html/');
 
 const getEntries = () => {
   return [
@@ -17,13 +12,33 @@ const getEntries = () => {
 };
 
 const getPlugins = () => {
-  const plugins = [
+  return [
     require('autoprefixer'),
     new CleanWebpackPlugin(),
     new CopyWebpackPlugin([
       {
         from: __dirname + '/../src/assets/',
         to: __dirname + '/../dist/assets/'
+      },
+      {
+        from: __dirname + '/../partials/',
+        to: __dirname + '/../dist/partials/'
+      },
+      {
+        from: __dirname + '/../*.hbs',
+        to: __dirname + '/../dist/'
+      },
+      {
+        from: __dirname + '/../package.json',
+        to: __dirname + '/../dist/'
+      },
+      {
+        from: __dirname + '/../robots.txt',
+        to: __dirname + '/../dist/'
+      },
+      {
+        from: __dirname + '/../LICENSE',
+        to: __dirname + '/../dist/'
       }
     ]),
     new ExtractTextPlugin({
@@ -31,38 +46,16 @@ const getPlugins = () => {
       allChunks: true
     })
   ];
-  htmlFileNames.forEach(filename => {
-    if (filename.substr(0, 1) !== '_') {
-      const splitted = filename.split('.');
-      if (splitted[1] === 'html') {
-        plugins.push(
-          new HtmlWebpackPlugin({
-            template: `./src/html/${filename}`,
-            filename: `./${filename}`
-          })
-        );
-      }
-    }
-  });
-
-  return plugins;
 };
 
 module.exports = {
   entry: getEntries(),
   output: {
-    filename: './assets/js/bundle.js'
+    filename: './assets/js/rebirth.js'
   },
   plugins: getPlugins(),
   module: {
     rules: [
-      {
-        test: /\.(html)$/,
-        loader: path.resolve(__dirname, 'loader/html-loader.js'),
-        options: {
-          html: htmlFileNames
-        }
-      },
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
@@ -96,6 +89,6 @@ module.exports = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.jpg', '.html', '.scss']
+    extensions: ['.js', '.jpg', '.scss']
   }
 };

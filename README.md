@@ -1,22 +1,88 @@
-# Rebirth
+# Ghost Theme - Rebirth
 
 2020年，加油武汉!
 
-### Ghost 主题
+这是一份 Ghost 主题。
 
-请访问该分支：[Ghost Theme](https://github.com/JaxsonWang/rebirth)
+### 特色
 
-### Typecho 主题
+- 大气、简约、优雅以及强大的响应式布局
+- 站内搜索，无需第三方扩展，利用 Ghost Api 实现搜索功能
+- 原生黑暗模式，支持 macOS 和 window10 黑暗模式，风格和 Ghost Admin 黑暗风格统一
+- 俩种风格文章模板，全宽和含有文章目录的模板
+- 友情链接和关于独立页独特模板，更好展示自己站点
+- 恰到好处的个人社交信息
+- 适合于中文字体阅读个人文章页面，优化到每一个元素
+- Valine 评论系统的支持
+- 强大的社交分享文章功能
+- 增强模板 SEO 优化
+- ...更多功能等你来体验
 
-[@JaydenForYou](https://github.com/JaydenForYou/Spring)
+### 更新日志
+
+[参考 CHANGELOG](./CHANGELOG.md)
+
+### 使用注意
+
+先安装依赖：
+
+```bash
+npm i # 或者 yarn install
+```
+
+
+使用该主题之前需要先配置相关环境，请将目录下的 `site.config.example.json` 重命名为 `site.config.json` 并且配置你所需要的变量：
+
+> 出现【必填】 关键词选项请填写，否则会出现模板渲染错误问题！
+
+```bash
+"ghostSearchKey": "Ghost Content Api Key 获取参考文档：https://ghost.org/docs/api/v3/content/#key ——必填",
+"leanCloudAppId": "Valine 评论系统 AppID 获取参考文档：https://valine.js.org/quickstart.html ——必填",
+"leanCloudAppKey": "Valine 评论系统 AppKey 获取参考文档：https://valine.js.org/quickstart.html ——必填",
+"leanCloudServerURL": "Valine 域名绑定 文档参考：https://valine.js.org/configuration.html#serverURLs ——必填",
+"aliPayQRImageUrl": "支付宝收款二维码 ——必填",
+"weChatPayQRImageUrl": "微信收款二维码 ——必填",
+"siteUrl": "网站首页地址，用于个性化配置 ——必填",
+"siteHomeTitle": "首页头部展示词 ——必填",
+"siteCdnUrl": "网站静态资源分发，也是 Ghost storage 绑定分发。该选项可以默认为空",
+"siteKeyWords": "网站关键词 ——必填",
+"siteICPNumber": "ICP备案号超链接",
+"siteGAICPNumber": "公安备案号超链接，不填为空",
+"siteFooterOther": "页脚超链接信息",
+"siteFooterSentence": "页脚一句",
+"siteSocialQQLink": "社交QQ链接 ——必填",
+"siteSocialQQTip": "社交QQ提示 ——必填",
+"siteSocialWeChatQRUrl": "微信二维码URL地址 ——必填",
+"siteSocialWeiboLink": "社交微博链接 ——必填",
+"siteSocialWeiboTip": "社交微博提示 ——必填",
+"siteSocialGithubLink": "社交Github链接 ——必填",
+"siteSocialGithubTip": "社交Github提示 ——必填"
+"siteToastsId": "弹窗ID唯一，字符串组合 ——必填",
+"siteToastsContent": "弹窗内容 ——必填",
+"siteToastsTime": "弹窗时间，例如2020-02-08T14:45:00，注意有个日期和时间中间有个【T】 ——必填"
+```
+
+填写后，执行 `npm run build` 或者 `yarn build` 得到 `dist` 文件夹，上传网站即可。
+
+关于统计请在 `Ghost Admin` 的 `code-injection` 添加。
 
 ### 开发命令
 
 ```bash
-yarn install
-yarn serve # 启动开发服务
-yarn build # 编译静态页面
+yarn install / npm install # 安装依赖
+yarn serve / npm run serve # 启动开发服务
+yarn build / npm run build # 编译 Ghost 可用主题
 ```
+
+> 注意：启动 `yarn serve` 时需要启动 `Ghost` 服务。该服务只会监听文件生成静态资源，不会额外启动服务器。
+
+> `yarn build` 生成目录在 `dist` 下面，只需要把里面的所有文件上传到你的服务器即可。
+
+### 其他
+
+[静态页](https://github.com/JaxsonWang/rebirth/tree/master)
+
+[Typecho 主题](https://github.com/JaydenForYou/Spring)
 
 ### License
 

@@ -1,6 +1,6 @@
 <div class="sidebar-container">
   <div class="d-flex justify-content-between sidebar-header">
-    <div class="sidebar-title">淮城一只猫</div>
+    <div class="sidebar-title">{{@site.title}}</div>
     <div class="d-flex sidebar-right">
       <div class="d-flex align-items-center justify-content-center sidebar-search click-search">
         <i class="fas fa-search"></i>
@@ -10,13 +10,7 @@
       </div>
     </div>
   </div>
-  <div class="list-group list-group-flush">
-    <a href="#" class="list-group-item list-group-item-action menu-item active">编程</a>
-    <a href="#" class="list-group-item list-group-item-action menu-item">技术</a>
-    <a href="#" class="list-group-item list-group-item-action menu-item">生活</a>
-    <a href="#" class="list-group-item list-group-item-action menu-item">友链</a>
-    <a href="#" class="list-group-item list-group-item-action menu-item">关于</a>
-  </div>
+  {{navigation mobile=true}}
   <div class="mt-2 text-center sidebar-footer">
     <button type="button" class="btn site-tooltip btn-footer btn-dark-mode click-dark" data-toggle="tooltip" data-placement="bottom" title="切换风格">
       🌓

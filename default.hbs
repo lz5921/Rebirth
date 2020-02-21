@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="{{@site.lang}}">
+<head>
+
+  {{!-- 网页设置 --}}
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  {{!-- 基本网页标签 --}}
+  <title>{{meta_title page=(t " - 第%页")}}{{#is "post, page"}} – {{@site.title}}{{/is}}</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
+  <meta name="keywords" content="">
+
+  {{!-- 依赖样式表 --}}
+  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.12.0/css/all.min.css">
+
+  {{!-- 样式脚本 --}}
+  <link rel="stylesheet" type="text/css" href="{{asset "/css/styles.css"}}" />
+
+  {{!-- dns预加载 --}}
+  <link rel="dns-prefetch" href="{{@site.url}}">
+  <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+  <link rel="dns-prefetch" href="//cdn.iiong.com">
+  <link rel="dns-prefetch" href="//hm.baidu.com">
+  <link rel="dns-prefetch" href="//zz.bdstatic.com">
+  <link rel="dns-prefetch" href="//sp0.baidu.com">
+  <link rel="dns-prefetch" href="//api.share.baidu.com">
+  <link rel="dns-prefetch" href="//push.zhanzhang.baidu.com">
+  <link rel="dns-prefetch" href="//gravatar.loli.net">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+  {{!-- Ghost 页头信息 --}}
+  {{ghost_head}}
+
+</head>
+<body class="{{body_class}}">
+
+<div class="d-flex site-wrapper">
+  <div class="d-block d-lg-none d-xl-none sidebar-wrapper">
+    {{> site-mobile-sidebar}}
+  </div>
+  <div class="main-wrapper">
+    {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    {{{body}}}
+
+    <footer class="main-footer">
+      <div class="container d-flex justify-content-md-between justify-content-center">
+        <div class="text-center main-footer-copyright">
+          <p>Powered by <a href="https://ghost.org/" rel="noopener nofollow" target="_blank">Ghost</a>. Copyright &copy; 2019. Crafted with <a href="https://github.com/JaxsonWang/rebirth" target="_blank" rel="noopener nofollow">Rebirth</a>.</p>
+        </div>
+        <div class="d-none d-md-block main-footer-meta">只争朝夕，不负韶华。</div>
+      </div>
+      <div class="container d-flex flex-wrap-reverse justify-content-md-between justify-content-center text-center main-footer-audit">
+        <p>
+          <a href="http://www.miitbeian.gov.cn" target="_blank" rel="nofollow noopener">苏ICP备15050739号-4</a>
+          <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32010402000196" target="_blank" rel="nofollow noopener">苏公网安备32010402000196号</a>
+          <a href="https://tongji.baidu.com/web/welcome/ico?s=075de8ed5c2bfb5f678b1a620749aee4" target="_blank" rel="nofollow noopener">百度统计</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+  {{> site-search}}
+  {{> site-to-top}}
+  {{> site-toasts}}
+</div>
+{{!-- 依赖脚本 --}}
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@tryghost/content-api@1.3.7/umd/content-api.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ghost-search@1.1.0/dist/ghost-search.min.js"></script>
+{{#is "post"}}
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.2.0/dist/av-min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+{{/is}}
+
+{{!-- 脚本 --}}
+<script type="text/javascript" src="{{asset "/js/rebirth.js"}}"></script>
+
+{{!-- 用户自定义脚本 --}}
+{{{block "scripts"}}}
+
+{{!-- Ghost 页脚信息 --}}
+{{ghost_foot}}
+
+</body>
+</html>
