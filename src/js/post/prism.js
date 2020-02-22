@@ -2,7 +2,7 @@ import {loadScripts, loadStyles} from '../untils';
 import {loadingIcon} from '../untils/icon';
 import baseToast from '../other/toasts';
 
-const prism = async (window) => {
+export const prism = async (window) => {
   // Prismjs 库地址
   const prismSrc = `https://cdn.jsdelivr.net/npm/prismjs@1.19.0`;
   // 高亮语法块

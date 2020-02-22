@@ -11,7 +11,7 @@
         <div class="row">
           <div class="col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto pr-0">
             <h4 class="author-card-name">
-              <a href="{{url}}">{{name}}</a>
+              <a data-pjax href="{{url}}">{{name}}</a>
             </h4>
           </div>
           <div class="col-12 col-sm-12 col-md-auto col-lg-auto col-xl-auto">
@@ -20,7 +20,6 @@
                 <i class="fab fa-qq"></i>
               </a>
               <a class="site-popover author-card-social-links"
-                 href="#"
                  data-container=".site-wrapper"
                  data-toggle="popover"
                  data-placement="top"
@@ -56,12 +55,12 @@
         {{#if bio}}
           <p>{{bio}}</p>
         {{else}}
-          <p>阅读此作者的<a href="{{url}}">更多文章</a></p>
+          <p>阅读此作者的<a data-pjax href="{{url}}">更多文章</a></p>
         {{/if}}
       </section>
     </section>
     <div class="post-footer-right">
-      <a class="author-card-button" href="{{url}}">更多文章</a>
+      <a data-pjax class="author-card-button" href="{{url}}">更多文章</a>
     </div>
   </section>
 {{/primary_author}}

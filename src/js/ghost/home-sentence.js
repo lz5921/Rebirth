@@ -14,7 +14,7 @@ const toggleSentence = (window) => {
   });
 };
 
-const homeSentence = (window) => {
+export const homeSentence = (window) => {
   toggleSentence(window);
 };
 
