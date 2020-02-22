@@ -1,6 +1,7 @@
 import qrcode from '../other/qrcode';
 
-const share = (window, $) => {
+export const share = (window) => {
+  const $ = window.jQuery;
   $('.btn-share-popover').on('shown.bs.popover', () => {
     qrcode.then(response => {
       // eslint-disable-next-line no-undef,no-unused-vars
@@ -16,4 +17,4 @@ const share = (window, $) => {
   });
 };
 
-export default share(window, window.jQuery);
+export default share(window);

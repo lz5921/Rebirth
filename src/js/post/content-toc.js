@@ -1,4 +1,4 @@
-const toc = (window) => {
+const siteToc = (window) => {
   const $ = window.jQuery;
   window.Toc = {
     helpers: {
@@ -154,7 +154,11 @@ const toc = (window) => {
       this.helpers.populateNav($topContext, topLevel, $headings);
     }
   };
+};
 
+export const toc = (window) => {
+  const $ = window.jQuery;
+  siteToc(window);
   $(function () {
     // 文章目录初始化
     const navSelector = $('nav.article-toc-nav');

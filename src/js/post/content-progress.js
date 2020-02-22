@@ -1,4 +1,4 @@
-const contentProgress = (window) => {
+export const contentProgress = (window) => {
   const content = window.document.querySelector('.article-main');
 
   if (content === null) return false;

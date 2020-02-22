@@ -19,6 +19,7 @@ import './other/scrollreveal';
 
 // Ghost 业务
 import './ghost/global';
+import './ghost/pjax';
 import './ghost/toasts';
 import './ghost/pagination';
 import './ghost/search';

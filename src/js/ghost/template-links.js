@@ -1,11 +1,10 @@
-const templateLinks = (window) => {
-  window.document.addEventListener('DOMContentLoaded', () => {
-    const ul = window.document.querySelector('.custom-links-template ul');
-    if (ul !== null) ul.classList.add('row', 'mx-0');
-    window.document.querySelectorAll('.custom-links-template ul li').forEach(block => {
-      const itemLink = block.textContent.split('|');
-      block.classList.add('col-sm-12', 'col-md-6', 'col-lg-4', 'col-xl-4', 'mb-4');
-      block.innerHTML = `
+export const templateLinks = (window) => {
+  const ul = window.document.querySelector('.custom-links-template ul');
+  if (ul !== null) ul.classList.add('row', 'mx-0');
+  window.document.querySelectorAll('.custom-links-template ul li').forEach(block => {
+    const itemLink = block.textContent.split('|');
+    block.classList.add('col-sm-12', 'col-md-6', 'col-lg-4', 'col-xl-4', 'mb-4');
+    block.innerHTML = `
       <div class="shadow px-3 links-item-wrapper">
         <div class="links-item-wrapper-header">
           <img src="${itemLink[2]}" class="border links-item-wrapper-header-avatar" alt="${itemLink[0]}"/>
@@ -18,7 +17,6 @@ const templateLinks = (window) => {
         </div>
       </div>
       `;
-    });
   });
 };
 

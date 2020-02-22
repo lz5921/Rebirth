@@ -23,13 +23,13 @@ fs.readFile(`${rootDir}/assets/js/rebirth.js`, 'utf8', (err, data) => {
     throw err
   }
   const result = data
-    .replace(/REGghostSearchKeyREG/, config.ghostSearchKey)
+    .replace(/4015596533516fdf195b645a1d/, config.ghostSearchKey)
     .replace(/REGleanCloudAppIdREG/, config.leanCloudAppId)
     .replace(/REGleanCloudAppKeyREG/, config.leanCloudAppKey)
     .replace(/REGleanCloudServerURLREG/, config.leanCloudServerURL)
     .replace(/REGToastLocalStorageIdREG/g, config.siteToastsId)
     .replace(/REGToastContentREG/, config.siteToastsContent)
-    .replace(/2020-02-08T14:45/, config.siteToastsTime)
+    .replace(/2020-02-08T14:45/, config.siteToastsTime);
 
   fs.writeFile(`${rootDir}/assets/js/rebirth.js`, result, 'utf8', (err) => {
     if (err) {

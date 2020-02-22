@@ -16,7 +16,7 @@
               <small class="read-next-card-header-sitetitle">&mdash; {{@site.title}} &mdash;</small>
               {{#../primary_tag}}
                 <h3 class="read-next-card-header-title">
-                  <a href="{{url}}">{{name}}</a>
+                  <a data-pjax href="{{url}}">{{name}}</a>
                 </h3>
               {{/../primary_tag}}
             </header>
@@ -28,12 +28,12 @@
             <div class="read-next-card-content">
               <ul>
                 {{#foreach related_posts}}
-                  <li><a href="{{url}}">{{title}}</a></li>
+                  <li><a data-pjax href="{{url}}">{{title}}</a></li>
                 {{/foreach}}
               </ul>
             </div>
             <footer class="read-next-card-footer">
-              <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='没有文章' singular='% 篇文章' plural='查看更多文章'}} →</a>
+              <a data-pjax href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='没有文章' singular='% 篇文章' plural='查看更多文章'}} →</a>
             </footer>
 
           </article>
@@ -44,7 +44,7 @@
       <div class="col-lg px-0 px-sm-3 d-flex min-h-300 post-read-more-item">
         <article class="post-read-next">
           {{#if feature_image}}
-            <a class="post-read-next-image-link" href="{{url}}">
+            <a data-pjax class="post-read-next-image-link" href="{{url}}">
               {{!-- This is a responsive image, it loads different sizes depending on device
               https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
               <img class="post-read-next-image"
@@ -59,7 +59,7 @@
             </a>
           {{/if}}
           <div class="post-read-next-content">
-            <a class="post-read-next-content-link" href="{{url}}">
+            <a data-pjax class="post-read-next-content-link" href="{{url}}">
               <header class="post-read-next-header">
                 {{#if primary_tag}}
                   <span class="post-read-next-tags">{{primary_tag.name}}</span>
@@ -75,12 +75,12 @@
                 {{#foreach authors}}
                   <li class="author-list-item">
                     {{#if profile_image}}
-                      <a href="{{url}}" class="static-avatar">
+                      <a data-pjax href="{{url}}" class="static-avatar">
                         <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
                         <span class="author-profile-name">淮城一只猫</span>
                       </a>
                     {{else}}
-                      <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                      <a data-pjax href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
                       <span class="author-profile-name">淮城一只猫</span>
                     {{/if}}
                   </li>
@@ -96,7 +96,7 @@
       <div class="col-xl px-0 px-sm-3 d-flex min-h-300 post-read-more-item">
         <article class="post-read-next">
           {{#if feature_image}}
-            <a class="post-read-next-image-link" href="{{url}}">
+            <a data-pjax class="post-read-next-image-link" href="{{url}}">
               {{!-- This is a responsive image, it loads different sizes depending on device
               https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
               <img class="post-read-next-image"
@@ -111,7 +111,7 @@
             </a>
           {{/if}}
           <div class="post-read-next-content">
-            <a class="post-read-next-content-link" href="{{url}}">
+            <a data-pjax class="post-read-next-content-link" href="{{url}}">
               <header class="post-read-next-header">
                 {{#if primary_tag}}
                   <span class="post-read-next-tags">{{primary_tag.name}}</span>
@@ -127,12 +127,12 @@
                 {{#foreach authors}}
                   <li class="author-list-item">
                     {{#if profile_image}}
-                      <a href="{{url}}" class="static-avatar">
+                      <a data-pjax href="{{url}}" class="static-avatar">
                         <img class="author-profile-image" src="{{img_url profile_image size="xs"}}" alt="{{name}}"/>
                         <span class="author-profile-name">淮城一只猫</span>
                       </a>
                     {{else}}
-                      <a href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
+                      <a data-pjax href="{{url}}" class="static-avatar author-profile-image">{{> "icons/avatar"}}</a>
                       <span class="author-profile-name">淮城一只猫</span>
                     {{/if}}
                   </li>

@@ -6,7 +6,7 @@ const search = (window, $) => {
   new GhostSearch({
     host: [location.protocol, '//', location.host].join(''),
     version: 'v3',
-    key: 'REGghostSearchKeyREG',
+    key: '4015596533516fdf195b645a1d',
     url: [location.protocol, '//', location.host].join(''),
     trigger: 'focus',
     defaultValue: '',
@@ -21,7 +21,7 @@ const search = (window, $) => {
     template: function (results) {
       const time = parseTime(new Date(results.published_at), '{y}-{m}-{d}');
       return '' +
-        '<a href="' + results.url + '" class="ghost-search-item">' +
+        '<a data-pjax href="' + results.url + '" class="ghost-search-item">' +
         '<h2>' + results.title + '</h2>' +
         '<span>发布日期：' + time + '</span>' +
         '</a>';

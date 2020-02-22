@@ -1,4 +1,4 @@
-<section class="main-hero">
+<section class="main-hero{{#if template-class}} {{template-class}}{{/if}}">
   {{> header-background background=feature_image}}
   <div class="main-hero-bg {{#if feature_image}}responsive-header-img{{else}}no-image{{/if}}"></div>
   <div class="d-flex flex-column align-content-center justify-content-center main-hero-content">

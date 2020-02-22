@@ -1,0 +1,65 @@
+$loader-size: 100px;
+
+.pjax-loading-wrapper {
+  display: none;
+  .pjax-loading {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $skeleton-color;
+    z-index: 1080;
+
+    .loading {
+      width: $loader-size;
+      height: $loader-size;
+
+      &__ring {
+        position: absolute;
+        width: $loader-size;
+        height: $loader-size;
+
+        &:first-child {
+          transform: skew(30deg,20deg);
+        }
+
+        &:last-child {
+          transform: skew(-30deg,-20deg) scale(-1, 1);
+
+          svg {
+            animation-delay: -0.5s;
+          }
+        }
+
+        svg {
+          animation: rotate 1s linear infinite;
+          fill: rgba(0, 0, 0, 0.2);
+        }
+      }
+    }
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@mixin dark-mode {
+  .pjax-loading-wrapper {
+    .pjax-loading {
+      background: $dark-skeleton-color;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
+
+[data-theme="dark"] {
+  @include dark-mode;
+}
