@@ -21,7 +21,7 @@ export const imageZoom = (window) => {
   });
 };
 
-const imageZoomDefault = (window) => {
+export const imageZoomDefault = (window) => {
   imageZoom(window).then(zooming => {
     zooming.listen('.post-content-main article.post-content p img');
     zooming.listen('.post-content-main article.post-content figure.kg-image-card img');
