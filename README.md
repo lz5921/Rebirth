@@ -66,6 +66,17 @@ npm i # 或者 yarn install
 
 关于统计请在 `Ghost Admin` 的 `code-injection` 添加。
 
+**友情链接模板使用：**
+
+使用 Markdown 编写链接信息，格式如下：
+
+```markdown
+- 博客名|[博客地址](博客地址)|头像地址|博客简介
+- 淮城一只猫|[https://iiong.com](https://iiong.com)|https://gravatar.loli.net/avatar/4f6d6e259391f7b3d3ae8335a8cafeed|永远年轻，永远热泪盈眶！
+```
+
+请注意：博客地址需要渲染超链接，不然这是 SEO 问题。
+
 ### 开发命令
 
 ```bash
@@ -86,4 +97,4 @@ yarn build / npm run build # 编译 Ghost 可用主题
 
 ### License
 
-Rebirth is licensed under GNU General Public License Version 3 or later.
+Ghost Theme Rebirth is open source and released under the MIT License.

@@ -1,4 +1,5 @@
-const toTop = ($) => {
+export const toTop = (window) => {
+  const $ = window.jQuery;
   const returnTop = $('.click-to-top');
   if ($(this).scrollTop() >= 50) {
     returnTop.addClass('bounceInRight').removeClass('bounceOutDown');
@@ -19,4 +20,4 @@ const toTop = ($) => {
   });
 };
 
-export default toTop(window.jQuery);
+export default toTop(window);

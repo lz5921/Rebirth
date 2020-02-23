@@ -47,8 +47,8 @@ const pagination = (currentPage, pageCount) => {
   return range;
 };
 
-const index = () => {
+export const sitePagination = () => {
   createPagination();
 };
 
-export default index();
+export default sitePagination();
