@@ -39,6 +39,10 @@ const getPlugins = () => {
       {
         from: __dirname + '/../LICENSE',
         to: __dirname + '/../dist/'
+      },
+      {
+        from: __dirname + '/../site.config.json',
+        to: __dirname + '/../dist/'
       }
     ]),
     new ExtractTextPlugin({
