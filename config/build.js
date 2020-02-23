@@ -138,10 +138,26 @@ fs.readFile(`${rootDir}/robots.txt`, 'utf8', (err, data) => {
     throw err
   }
 
-  const result = data
-    .replace(/REGblog-urlREG/, config.siteUrl)
+  const result = data.replace(/REGblog-urlREG/, config.siteUrl);
 
   fs.writeFile(`${rootDir}/robots.txt`, result, 'utf8', (err) => {
+    if (err) {
+      throw err
+    }
+  });
+});
+
+/**
+ * 文件操作 - logo
+ */
+fs.readFile(`${rootDir}/partials/icons/site-logo.hbs`, 'utf8', (err, data) => {
+  if (err) {
+    throw err
+  }
+
+  const result = data.replace(/<svg[^>]*>([\s\S.]*)<\/svg>/i, config.siteHomeLogoSvg);
+
+  fs.writeFile(`${rootDir}/partials/icons/site-logo.hbs`, result, 'utf8', (err) => {
     if (err) {
       throw err
     }
