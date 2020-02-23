@@ -21,7 +21,7 @@ const createPagination = () => {
         if (urlArray[urlArray.length - 3] === 'page') {
           url = url.replace(/\/page\/.*$/, '') + '/';
         }
-        paginationItems.push('<li class="page-item"><a class="page-link" href="' + url + 'page/' + pagElm + '/" aria-label="第' + pagElm + '页">' + pagElm + '</a></li>');
+        paginationItems.push('<li class="page-item"><a data-pjax class="page-link" href="' + url + 'page/' + pagElm + '/" aria-label="第' + pagElm + '页">' + pagElm + '</a></li>');
       } else {
         paginationItems.push('<li class="page-item ellipsis"><a class="page-link">...</a></li>');
       }

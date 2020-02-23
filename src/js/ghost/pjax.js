@@ -102,6 +102,9 @@ const sendAjax = ($, url, event, document, window, popState) => {
       } else {
         $('.site-progress').remove();
       }
+      // 个性化配置 - 文章目录
+      body.scrollspy('dispose');
+      body.scrollspy('refresh');
       // 事件回调
       toc(window);
       prism(window);
@@ -139,6 +142,7 @@ const pjax = (window) => {
   $('body').on('click', 'a[data-pjax]', function (event) {
     // 阻止默认事件
     event.preventDefault();
+    if (window.location.href === this.href) return false;
     // 执行加载动画
     $('body').addClass('overflow-hidden');
     $('.pjax-loading-wrapper').fadeIn();
