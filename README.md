@@ -45,6 +45,7 @@ npm i # 或者 yarn install
 "weChatPayQRImageUrl": "微信收款二维码 ——必填",
 "siteUrl": "网站首页地址，用于个性化配置 ——必填",
 "siteHomeTitle": "首页头部展示词 ——必填",
+"siteHomeLogoSvg": "首页头部Logo，请使用 SVG 图片，不填为空",
 "siteCdnUrl": "网站静态资源分发，也是 Ghost storage 绑定分发。该选项可以默认为空",
 "siteKeyWords": "网站关键词 ——必填",
 "siteICPNumber": "ICP备案号超链接",
