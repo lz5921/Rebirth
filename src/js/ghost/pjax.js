@@ -55,6 +55,7 @@ const sendAjax = ($, url, event, document, window, popState) => {
     success: function (response) {
       const $head = $($.parseHTML(response.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0]));
       const $body = $($.parseHTML(response.match(/<body[^>]*>([\s\S.]*)<\/body>/i)[0]));
+      const body = $('body');
       // 设置标题
       document.title = findAll($head, 'title').text();
       // 返回头部
@@ -70,13 +71,12 @@ const sendAjax = ($, url, event, document, window, popState) => {
         // 关闭侧边栏
         $('.site-wrapper').toggleClass('toggled');
         $('.sidebar-toggler').show(250);
-        $('body').removeClass('overflow-hidden');
+        body.removeClass('overflow-hidden');
         $('.sidebar-container').removeClass('boxshadow-right');
         $('.global-modal').remove();
       }
       // 个性化配置 - 搜索打开链接
       if ($(event.currentTarget).hasClass('ghost-search-item')) {
-        const body = $('body');
         body.removeClass('overflow-hidden');
         // 移除搜索界面隐藏样式
         $('.search-wrapper').hide(250);
@@ -89,7 +89,7 @@ const sendAjax = ($, url, event, document, window, popState) => {
         if (body.hasClass('mobile-content')) {
           $('.site-wrapper').toggleClass('toggled');
           $('.sidebar-toggler').show(250);
-          $('body').removeClass('overflow-hidden');
+          body.removeClass('overflow-hidden');
           $('.sidebar-container').removeClass('boxshadow-right');
           $('.global-modal').remove();
         }
@@ -122,7 +122,7 @@ const sendAjax = ($, url, event, document, window, popState) => {
       $('.site-tooltip-wrapper').remove();
       $('.site-popover-wrapper').remove();
       // 执行关闭动画
-      $('body').removeClass('overflow-hidden');
+      body.removeClass('overflow-hidden');
       $('.pjax-loading-wrapper').fadeOut('slow');
     }
   });

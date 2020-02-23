@@ -2,7 +2,7 @@
 
 2020年，加油武汉!
 
-这是一份 Ghost 主题。
+这是一份 Ghost Pjax 主题。
 
 ### 特色
 
@@ -16,6 +16,7 @@
 - Valine 评论系统的支持
 - 强大的社交分享文章功能
 - 增强模板 SEO 优化
+- 原生 Pjax 支持，无第三方依赖
 - ...更多功能等你来体验
 
 ### 更新日志
@@ -65,6 +66,21 @@ npm i # 或者 yarn install
 填写后，执行 `npm run build` 或者 `yarn build` 得到 `dist` 文件夹，上传网站即可。
 
 关于统计请在 `Ghost Admin` 的 `code-injection` 添加。
+
+**友情链接模板使用：**
+
+使用 Markdown 编写链接信息，格式如下：
+
+```markdown
+- 博客名|[博客地址](博客地址)|头像地址|博客简介
+- 淮城一只猫|[https://iiong.com](https://iiong.com)|https://gravatar.loli.net/avatar/4f6d6e259391f7b3d3ae8335a8cafeed|永远年轻，永远热泪盈眶！
+```
+
+请注意：博客地址需要渲染超链接，不然这是 SEO 问题。
+
+** Pjax 回调 **
+
+默认添加支持百度统计和谷歌分析支持，如果需要其它统计平台，请提 issue 支持。
 
 ### 开发命令
 
