@@ -20,11 +20,12 @@ const debounceWidth = debounce(() => {
   getInnerWidth(window.jQuery);
 }, 100);
 
-const device = ($) => {
+export const device = (window) => {
+  const $ = window.jQuery;
   getInnerWidth($);
   addEventListener('resize', (event) => {
     debounceWidth($);
   });
 };
 
-export default device(window.jQuery);
+export default device(window);
