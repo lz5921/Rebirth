@@ -21,7 +21,7 @@
 
 ### 更新日志
 
-[参考 CHANGELOG](./CHANGELOG.md)
+[参考 CHANGELOG](https://github.com/JaxsonWang/Rebirth/blob/master/CHANGELOG.md)
 
 ### 使用注意
 

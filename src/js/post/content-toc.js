@@ -51,7 +51,7 @@ const siteToc = (window) => {
     },
 
     createNavList: function () {
-      return $('<ul class="nav navbar-nav article-toc"><div class="toc-title">文章目录：</div></ul>');
+      return $('<ul class="nav navbar-nav article-toc"></ul>');
     },
 
     createChildNavList: function ($parent) {
