@@ -102,4 +102,4 @@ yarn build / npm run build # 编译 Ghost 可用主题
 
 ### License
 
-Rebirth is licensed under GNU General Public License Version 3 or later.
+Ghost Theme Rebirth is open source and released under the MIT License.
