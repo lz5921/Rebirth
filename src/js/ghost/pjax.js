@@ -11,6 +11,7 @@ import {comment} from '../ghost/comment';
 import {templateLinks} from '../ghost/template-links';
 import {homeSentence} from '../ghost/home-sentence';
 import {sitePagination} from '../ghost/pagination';
+import {scrollreveal} from '../other/scrollreveal';
 
 /**
  * 查找 jQuery 对象
@@ -55,6 +56,7 @@ const sendAjax = ($, url, event, document, window, popState) => {
     success: function (response) {
       const $head = $($.parseHTML(response.match(/<head[^>]*>([\s\S.]*)<\/head>/i)[0]));
       const $body = $($.parseHTML(response.match(/<body[^>]*>([\s\S.]*)<\/body>/i)[0]));
+      const bodyClass = response.match(/<body[^>]*class="([^>]*)">/i)[1];
       const body = $('body');
       // 设置标题
       document.title = findAll($head, 'title').text();
@@ -116,6 +118,7 @@ const sendAjax = ($, url, event, document, window, popState) => {
       homeSentence(window);
       device(window);
       toTop(window);
+      scrollreveal(window);
       sitePagination();
       comment();
       // 自定义脚本回调
@@ -124,6 +127,8 @@ const sendAjax = ($, url, event, document, window, popState) => {
       // 重置 ToolTips Popover
       $('.site-tooltip-wrapper').remove();
       $('.site-popover-wrapper').remove();
+      // 替换样式
+      $(body).attr('class', bodyClass);
       // 执行关闭动画
       body.removeClass('overflow-hidden');
       $('.pjax-loading-wrapper').fadeOut('slow');
@@ -133,6 +138,10 @@ const sendAjax = ($, url, event, document, window, popState) => {
   if (popState) window.history.pushState(null, '', url);
 };
 
+/**
+ * Pjax 事件
+ * @param window window 对象
+ */
 const pjax = (window) => {
   const $ = window.jQuery;
   const document = window.document;
