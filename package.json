@@ -1,6 +1,6 @@
 {
   "name": "rebirth",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "scripts": {
     "serve": "webpack-dev-server --config config/webpack.dev.babel.js --mode development ",
     "build": "webpack --config config/webpack.prod.babel.js --mode production --env.production",
