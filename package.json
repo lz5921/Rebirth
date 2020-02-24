@@ -13,7 +13,7 @@
     "eslint": "eslint src/**/*.js",
     "eslint-fix": "eslint src/**/*.js --fix"
   },
-  "license": "GPL-3.0",
+  "license": "MIT",
   "author": {
     "email": "i@iiong.com",
     "name": "Jaxson Wang"

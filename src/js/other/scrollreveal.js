@@ -1,4 +1,4 @@
-const scrollreveal = (window) => {
+export const scrollreveal = (window) => {
   window.ScrollReveal().reveal('.home-post-item', {
     delay: 100,
     interval: 16,
