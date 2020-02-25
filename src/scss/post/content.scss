@@ -311,12 +311,6 @@
       display: block;
       margin: 1.5em auto;
       height: auto;
-      &:before {
-        position: absolute;
-        content: "";
-        background: rgba(0,0,0,.5);
-        z-index: 1;
-      }
     }
   }
 
@@ -380,6 +374,12 @@
 
     hr {
       border-bottom: 1px solid $dark-main-color;
+    }
+
+    p {
+      img {
+        filter: brightness(50%);
+      }
     }
   }
 }
