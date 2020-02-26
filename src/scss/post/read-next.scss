@@ -21,7 +21,6 @@
         color: #fff;
         background: #15171A center center;
         background-size: cover;
-        border-radius: 0.313rem;
         box-shadow: rgba(39, 44, 49, 0.06) 0.5rem 0.875rem 2.375rem, rgba(39, 44, 49, 0.03) 0.063rem 0.188rem 0.5rem;
         width: 100%;
 
@@ -34,7 +33,6 @@
           left: 0;
           display: block;
           background: linear-gradient(135deg, rgba(0, 40, 60, 0.8) 0%, rgba(0, 20, 40, 0.7) 100%);
-          border-radius: 0.5rem;
           backdrop-filter: blur(0.125rem);
         }
 
@@ -145,7 +143,6 @@
         min-height: 18.75rem;
         background: #fff center center;
         background-size: cover;
-        border-radius: 0.313rem;
         box-shadow: rgba(39, 44, 49, 0.06) 0.5rem 0.875rem 2.375rem, rgba(39, 44, 49, 0.03) 0.063rem 0.188rem 0.5rem;
         transition: all 0.5s ease;
 
@@ -153,7 +150,6 @@
           position: relative;
           display: block;
           overflow: hidden;
-          border-radius: 0.313rem 0.313rem 0 0;
 
           .post-read-next-image {
             width: 100%;
@@ -270,7 +266,6 @@
 
         .read-next-card {
           color: $dark-main-color;
-          background: $dark-background-color center center;
 
           .read-next-card-header {
 
