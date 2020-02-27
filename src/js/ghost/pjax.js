@@ -41,6 +41,16 @@ const replace = (ele, elements, $) => {
 };
 
 /**
+ * 执行静态字符串，用于重载函数
+ * @param fn
+ * @returns {*}
+ */
+const callbackFunction = (fn) => {
+  fn = fn.replace(/<\/?.+?>/g, '').replace(/[\r\n]/g, '');
+  return new Function('return ' + fn)();
+};
+
+/**
  * 请求页面
  * @param $ jQuery对象
  * @param url 请求地址
@@ -124,6 +134,9 @@ const sendAjax = ($, url, event, document, window, popState) => {
       // 自定义脚本回调
       if (typeof window.ga !== 'undefined') window.ga('send', 'pageview', window.location.pathname + window.location.search);
       if (typeof window._hmt !== 'undefined') window._hmt.push(['_trackPageview', window.location.pathname + window.location.search]);
+      $('.pjax-callback').each(function () {
+        callbackFunction($(this).text());
+      });
       // 重置 ToolTips Popover
       $('.site-tooltip-wrapper').remove();
       $('.site-popover-wrapper').remove();
@@ -132,6 +145,11 @@ const sendAjax = ($, url, event, document, window, popState) => {
       // 执行关闭动画
       body.removeClass('overflow-hidden');
       $('.pjax-loading-wrapper').fadeOut('slow');
+    },
+    error: function (error) {
+      if (error.status === 404) {
+        window.location.href = '/404/';
+      }
     }
   });
   // 写入浏览器历史记录

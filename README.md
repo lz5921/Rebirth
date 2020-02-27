@@ -4,6 +4,8 @@
 
 这是一份 Ghost Pjax 主题。
 
+> 偏向于程序员习惯的主题，普通用户请慎重考虑后再使用！
+
 ### 特色
 
 - 大气、简约、优雅以及强大的响应式布局
@@ -83,6 +85,14 @@ npm i # 或者 yarn install
 
 默认添加支持百度统计和谷歌分析支持，如果需要其它统计平台，请提 issue 支持。
 
+如果需要自定义函数只需要添加类名 `pjax-callback` 即可重载函数：
+
+```javascript
+<script class="pjax-callback">
+console.log('test')
+</script>
+```
+
 **更新**
 
 只需要支持命令：
@@ -104,6 +114,14 @@ yarn build / npm run build # 编译 Ghost 可用主题
 > 注意：启动 `yarn serve` 时需要启动 `Ghost` 服务。该服务只会监听文件生成静态资源，不会额外启动服务器。
 
 > `yarn build` 生成目录在 `dist` 下面，只需要把里面的所有文件上传到你的服务器即可。
+
+### 浏览器兼容
+
+| [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)</br>Opera |
+| --- | --- | --- | --- | --- |
+| Edge </br> ( EdgeHTML / Chromium ) | last 2 versions | last 2 versions | last 2 versions | last 2 versions |
+
+> 已抛弃 IE ，万恶的 IE 阻滞前端的发展！
 
 ### 其他
 
