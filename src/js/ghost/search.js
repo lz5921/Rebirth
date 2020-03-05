@@ -21,7 +21,7 @@ const search = (window, $) => {
     template: function (results) {
       const time = parseTime(new Date(results.published_at), '{y}-{m}-{d}');
       return '' +
-        '<a data-pjax href="' + results.url + '" class="ghost-search-item">' +
+        '<a href="' + results.url + '" class="ghost-search-item">' +
         '<h2>' + results.title + '</h2>' +
         '<span>发布日期：' + time + '</span>' +
         '</a>';

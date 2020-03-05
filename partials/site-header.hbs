@@ -2,11 +2,11 @@
   <nav class="navbar navbar-expand-md header-navbar">
     <div class="container">
       {{#if @site.logo}}
-        <a data-pjax class="mr-0 navbar-brand" href="{{@site.url}}">
+        <a class="mr-0 navbar-brand" href="{{@site.url}}">
           <img class="d-inline-block align-top navbar-brand-logo" src="{{@site.logo}}" alt="{{@site.title}}" />
         </a>
       {{else}}
-        <a data-pjax class="navbar-brand" href="{{@site.url}}">
+        <a class="navbar-brand" href="{{@site.url}}">
           <span class="d-inline-block align-top navbar-brand-logo">{{> "icons/site-logo"}}</span>
           {{@site.title}}
         </a>
