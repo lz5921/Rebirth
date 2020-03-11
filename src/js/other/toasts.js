@@ -21,7 +21,7 @@ const baseToast = ($, options) => {
 <div id="${toastId + timeTmp}" class="toast toast-wrapper-list-item ${toastId}" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
     <img src="/favicon.png" class="rounded mr-2" alt="site-logo">
-    <strong class="mr-auto">淮城一只猫</strong>
+    <strong class="mr-auto">${window.rebirth.name}</strong>
     <small>${toastTime}</small>
     <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
       <span aria-hidden="true">&times;</span>
