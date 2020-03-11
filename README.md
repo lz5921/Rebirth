@@ -20,9 +20,6 @@
 - 增强模板 SEO 优化
 - ...更多功能等你来体验
 
-如果你想使用 Pjax 请使用[Ghost Rebirth Pjax 版本](https://github.com/JaxsonWang/Rebirth/tree/ghost-theme-pjax)
-
-
 ### 更新日志
 
 [参考 CHANGELOG](./CHANGELOG.md)
@@ -115,7 +112,7 @@ yarn build / npm run build # 编译 Ghost 可用主题
 
 ### 其他
 
-[Ghost Rebirth Pjax 版本](https://github.com/JaxsonWang/Rebirth/tree/ghost-theme-pjax)
+[Ghost Rebirth Pjax 版本](https://github.com/JaxsonWang/Rebirth/tree/ghost-theme-pjax) - 已停止维护
 
 [静态页](https://github.com/JaxsonWang/rebirth/tree/state-page)
 

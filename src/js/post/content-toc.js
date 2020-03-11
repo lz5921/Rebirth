@@ -118,7 +118,6 @@ const siteToc = (window) => {
         } else if ($prevNav && $context === $topContext) {
           // create a new level of the tree and switch to it
           $context = helpers.createChildNavList($prevNav);
-          console.log($context);
         } // else use the current $context
 
         $context.append($newNav);

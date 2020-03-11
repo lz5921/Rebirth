@@ -1,4 +1,4 @@
-<article class="row mb-3 my-md-5 post-card home-post-item {{post_class}}">
+<article class="row shadow mb-3 my-md-5 post-card home-post-item {{post_class}}">
   <div class="col-12 col-sm-12 col-md-7 col-lg-7 col-xl-6 px-0 {{#if @even}}order-md-last{{else}}order-md-first{{/if}}">
     <div class="post-card-image">
       <div class="post-card-image-shadow"></div>
@@ -15,21 +15,21 @@
       </a>
     </div>
   </div>
-  <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-6 {{#if @even}}order-md-first{{else}}order-md-last{{/if}}">
+  <div class="col-12 col-sm-12 col-md-5 col-lg-5 col-xl-6 {{#if @even}}pr-md-0 order-md-first{{else}}pl-md-0 order-md-last{{/if}}">
     <div class="d-flex flex-column justify-content-center post-card-content">
       {{#if primary_tag}}
         {{#primary_tag}}
-          <div class="text-center text-md-left mt-3 mt-md-0 post-card-content-tag">
+          <div class="text-center {{#if @even}}text-md-right{{else}}text-md-left{{/if}} mt-3 mt-md-0 post-card-content-tag">
             <i class="fas fa-bookmark"></i>
             {{name}}
           </div>
         {{/primary_tag}}
       {{/if}}
-      <h3 class="post-card-content-title">
+      <h3 class="{{#if @even}}text-right{{else}}text-left{{/if}} post-card-content-title">
         <a href="{{url}}" class="post-card-content-title-link">{{title}}</a>
       </h3>
-      <p class="mb-3 mb-md-5 post-card-content-excerpt">{{excerpt}}</p>
-      <div class="d-flex align-items-center post-card-content-meta">
+      <p class="mb-3 mb-md-5 {{#if @even}}text-right{{else}}text-left{{/if}} post-card-content-excerpt">{{excerpt}}</p>
+      <div class="d-flex {{#if @even}}justify-content-end{{else}}justify-content-start{{/if}} align-items-center post-card-content-meta">
         <div class="d-flex align-items-center mr-1 post-card-content-meta-authors">
           {{!-- todo 头像非空判断 --}}
           {{#foreach authors}}

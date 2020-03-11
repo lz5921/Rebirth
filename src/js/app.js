@@ -11,6 +11,7 @@ import './post/content-progress';
 import './post/prism';
 import './post/share';
 import './post/imageZoom';
+import './post/conversion';
 import './other/device';
 import './other/to-top';
 import './other/dark-mode';

@@ -2,6 +2,7 @@
   margin-top: 1.75rem;
 
   .post-card {
+    padding: 2rem 0 4rem;
     &-image {
       position: relative;
       height: 17.5rem;
@@ -67,7 +68,6 @@
       }
 
       &-meta {
-        margin-bottom: 1rem;
 
         &-authors {
           &-link {
