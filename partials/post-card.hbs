@@ -25,11 +25,11 @@
           </div>
         {{/primary_tag}}
       {{/if}}
-      <h3 class="{{#if @even}}text-right{{else}}text-left{{/if}} post-card-content-title">
+      <h3 class="text-left {{#if @even}}text-md-right{{else}}text-md-left{{/if}} post-card-content-title">
         <a href="{{url}}" class="post-card-content-title-link">{{title}}</a>
       </h3>
-      <p class="mb-3 mb-md-5 {{#if @even}}text-right{{else}}text-left{{/if}} post-card-content-excerpt">{{excerpt}}</p>
-      <div class="d-flex {{#if @even}}justify-content-end{{else}}justify-content-start{{/if}} align-items-center post-card-content-meta">
+      <p class="mb-3 mb-md-5 text-left {{#if @even}}text-md-right{{else}}text-md-left{{/if}} post-card-content-excerpt">{{excerpt}}</p>
+      <div class="d-flex justify-content-start {{#if @even}}justify-content-md-end{{else}}justify-content-md-start{{/if}} align-items-center post-card-content-meta">
         <div class="d-flex align-items-center mr-1 post-card-content-meta-authors">
           {{!-- todo 头像非空判断 --}}
           {{#foreach authors}}
