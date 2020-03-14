@@ -2,11 +2,20 @@
   margin-top: 1.75rem;
 
   .post-card {
+    padding: 2rem 0 4rem;
     &-image {
       position: relative;
       height: 17.5rem;
       margin: 0 auto;
-      overflow: hidden;
+
+      &-shadow {
+        display: none;
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border-radius: 2px;
+        background-color: #f5f6f9;
+      }
 
       &-link {
         display: block;
@@ -21,10 +30,6 @@
           background-repeat: no-repeat;
           background-position: 50%;
           background-size: cover;
-          transition: transform 250ms ease-in-out;
-          &:hover {
-            transform: scale(1.2);
-          }
         }
       }
     }
@@ -98,13 +103,80 @@
   }
 }
 
+@media (min-width: 576px) {
+}
+
+@media (min-width: 768px) {
+  .main-content {
+    .post-card {
+      &-image {
+        width: 18.75rem;
+        height: 18.75rem;
+
+        &-shadow {
+          display: block;
+        }
+
+        &-link {
+          top: 2rem;
+          left: 2rem;
+          transition: all 250ms cubic-bezier(0.02, 0.01, 0.5, 1) 0ms;
+
+          &:hover {
+            top: 3rem;
+            left: 3rem;
+          }
+
+          &.even {
+            top: 2rem;
+            left: -2rem;
+
+            &:hover {
+              top: 3rem;
+              left: -3rem;
+            }
+          }
+        }
+      }
+
+      &-content {
+        &-title {
+          &-link {
+          }
+        }
+
+        &-excerpt {
+        }
+
+        &-meta {
+          &-authors {
+            &-link {
+              &-avatar {
+              }
+            }
+          }
+
+          &-other {
+            &-tag {
+
+            }
+
+            &-date {
+
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
 @media (min-width: 992px) {
   .main-content {
     .post-card {
       &-image {
-        width: 100%;
-        height: 100%;
-        min-height: 30rem;
+        width: 25rem;
+        height: 25rem;
       }
     }
   }
@@ -118,6 +190,10 @@
 
     .post-card {
       &-image {
+        &-shadow {
+          background-color: #000;
+        }
+
         &-link {
           &-background {
             height: 100%;
