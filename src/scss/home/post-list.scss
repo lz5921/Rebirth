@@ -21,9 +21,9 @@
           background-repeat: no-repeat;
           background-position: 50%;
           background-size: cover;
-          transition: transform .35s ease-in-out;
+          transition: transform 250ms ease-in-out;
           &:hover {
-            transform: scale(1.1);
+            transform: scale(1.2);
           }
         }
       }
