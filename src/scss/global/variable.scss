@@ -10,6 +10,9 @@ $no-focus-color: #b9b8b3 !default;
 // 背景主色
 $background-color: #fff !default;
 
+// 页脚背景色
+$footer-background-color: #f7f7f7 !default;
+
 // 骨架色
 $skeleton-color: #f2f2f2 !default;;
 
@@ -18,6 +21,9 @@ $main-color: rgba(33, 37, 41, 1) !default;
 
 // 黑暗模式 - 主背景色
 $dark-background-color: #263238 !default;
+
+// 黑暗模式 - 页脚背景色
+$dark-footer-background-color: #000 !default;
 
 // 黑暗模式 - 字体主调色
 $dark-main-color: rgba(255, 255, 255, .5) !default;

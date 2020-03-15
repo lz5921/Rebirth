@@ -62,7 +62,8 @@ npm i # 或者 yarn install
 "siteSocialGithubTip": "社交Github提示 ——必填"
 "siteToastsId": "弹窗ID唯一，字符串组合 ——必填",
 "siteToastsContent": "弹窗内容 ——必填",
-"siteToastsTime": "弹窗时间，例如2020-02-08T14:45:00，注意有个日期和时间中间有个【T】 ——必填"
+"siteToastsTime": "弹窗时间，例如2020-02-08T14:45:00，注意有个日期和时间中间有个【T】 ——必填",
+"siteTagsFilterNav": "标签云展示忽略的标签名称"
 ```
 
 填写后，执行 `npm run build` 或者 `yarn build` 得到 `dist` 文件夹，上传网站即可。

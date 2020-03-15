@@ -23,5 +23,6 @@
   "siteSocialGithubTip": "访问Github",
   "siteToastsId": "toasts-20200221",
   "siteToastsContent": "欢迎访问个人博客！如果觉得这个弹窗频繁，可以手动叉掉后暂时不会再出现哦！",
-  "siteToastsTime": "2020-02-08T14:45:00"
+  "siteToastsTime": "2020-02-08T14:45:00",
+  "siteTagsFilterNav": "['编程技术', '奇淫技巧', '生活杂记']"
 }

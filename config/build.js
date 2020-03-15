@@ -163,3 +163,20 @@ fs.readFile(`${rootDir}/partials/icons/site-logo.hbs`, 'utf8', (err, data) => {
     }
   });
 });
+
+/**
+ * 文件操作 - 忽略菜单栏
+ */
+fs.readFile(`${rootDir}/partials/site-footer-info.hbs`, 'utf8', (err, data) => {
+  if (err) {
+    throw err
+  }
+
+  const result = data.replace(/\['菜单1', '菜单2', '菜单3']/, config.siteTagsFilterNav);
+
+  fs.writeFile(`${rootDir}/partials/site-footer-info.hbs`, result, 'utf8', (err) => {
+    if (err) {
+      throw err
+    }
+  });
+});

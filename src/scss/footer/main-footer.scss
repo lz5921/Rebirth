@@ -1,5 +1,6 @@
 .main-footer {
   padding: 3rem 0 2rem;
+  background-color: $footer-background-color;
 
   .main-footer-copyright {
     p {
@@ -33,4 +34,18 @@
       }
     }
   }
+}
+
+@mixin dark-mode {
+  .main-footer {
+    background-color: $dark-footer-background-color;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  @include dark-mode;
+}
+
+[data-theme="dark"] {
+  @include dark-mode;
 }

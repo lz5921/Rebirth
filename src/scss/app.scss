@@ -18,13 +18,17 @@
 @import "./post/content-progress";
 @import "./post/conversion";
 @import "./footer/main-footer";
+@import "./footer/main-footer-waves-info";
+@import "./footer/main-footer-waves-area";
 @import "./other/search";
 @import "./other/to-top";
 @import "./other/toasts";
 @import "./other/popovers";
+@import "./other/waves-area";
 
 // Ghost 业务
 @import "./ghost/koenig-styles";
+@import "./ghost/subscribe";
 @import "./ghost/comment";
 @import "./ghost/template-links";
 @import "./ghost/template-about";
