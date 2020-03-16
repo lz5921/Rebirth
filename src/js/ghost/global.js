@@ -12,6 +12,9 @@ const global = (window, $) => {
   window.document.querySelectorAll('.post-content a').forEach(block => {
     block.setAttribute('target', '_blank');
   });
+  window.document.querySelectorAll('.main-footer-info-navigation-list a').forEach(block => {
+    block.setAttribute('target', '_blank');
+  });
 };
 
 export default global(window, window.jQuery);
