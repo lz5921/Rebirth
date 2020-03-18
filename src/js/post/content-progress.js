@@ -4,6 +4,9 @@ export const contentProgress = (window) => {
   if (content === null) return false;
 
   const progress = window.document.querySelector('.reading-progress-bar');
+
+  if (progress === null) return false;
+
   const progressNumber = window.document.querySelector('.progress-number');
 
   const frameListening = () => {
