@@ -1,9 +1,9 @@
-<section class="py-5 main-footer-info">
+<section class="main-footer-info">
   <div class="container-sm">
     <div class="row">
-      <div class="d-none d-lg-block col main-footer-info-tags">
+      <div class="d-none d-lg-block py-5 col main-footer-info-tags">
         <h3 class="mb-3 main-footer-info-title main-footer-info-tags-title">标签</h3>
-        <div class="d-flex flex-row flex-wrap align-items-start w-100 h-100 main-footer-info-tags-list">
+        <div class="d-flex flex-row flex-wrap justify-content-center align-items-center w-100 h-100 main-footer-info-tags-list">
           {{#get "tags" limit="all" filter="name:-['菜单1', '菜单2', '菜单3']"}}
             {{#if tags.length}}
               {{#foreach tags}}
@@ -15,7 +15,7 @@
           {{/get}}
         </div>
       </div>
-      <div class="d-none d-lg-block col main-footer-info-navigation">
+      <div class="d-none d-lg-block py-5 col main-footer-info-navigation">
         <h3 class="mb-3 main-footer-info-title main-footer-info-navigation-title">导航</h3>
         <div class="w-100 h-100 main-footer-info-navigation-list">
           {{#if @site.secondary_navigation}}
@@ -25,34 +25,6 @@
           {{/if}}
         </div>
       </div>
-      {{#if @labs.members}}
-        <div class="col-md-12 col-lg-4 col-xl-4 main-footer-info-subscribe">
-          <div class="form-group subscribe-form">
-            <h3 class="mb-3 main-footer-info-title subscribe-form-title">订阅 {{@site.title}}</h3>
-            <p class="subscribe-form-description">订阅最新博文</p>
-            <form data-members-form="subscribe">
-              <div class="form-group w-100">
-                <label class="w-100">
-                  <input type="email" data-members-email placeholder="youremail@example.com" required autocomplete="false" class="form-control w-100 subscribe-email"/>
-                </label>
-              </div>
-              <div class="form-group w-100">
-                <button type="submit" class="btn btn-outline-secondary btn-sm w-100 button primary">订阅博客</button>
-              </div>
-              <div class="message-success">
-                订阅成功，请检查您的收件箱，然后单击链接以确认您的订阅。
-              </div>
-              <div class="message-error">
-                请正确输入邮箱地址！
-              </div>
-              <div class="justify-content-center align-items-center w-100 h-100 flex-column flex-wrap position-absolute message-loading">
-                <div class="button-loader">{{> "icons/loader"}}</div>
-                <div class="loading-title">正在数据中，请稍候！</div>
-              </div>
-            </form>
-          </div>
-        </div>
-      {{/if}}
     </div>
   </div>
 </section>
