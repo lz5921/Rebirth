@@ -1,0 +1,28 @@
+.page.custom-archive-template {
+  .archive-page {
+    padding: 0 1rem;
+    &-title {
+      font-weight: bold;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    &-list {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+      &-item {
+        margin: 1rem 0;
+        time {
+          font-size: .8rem;
+          margin-right: .25rem;
+        }
+        &-href {
+          font-size: 1.4rem;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

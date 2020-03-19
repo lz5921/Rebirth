@@ -1,0 +1,33 @@
+{{!< default}}
+
+{{!-- The tag above means: insert everything in this file
+into the {body} of the default.hbs template --}}
+
+{{> site-header}}
+
+{{!-- Everything inside the #post tags pulls data from the post --}}
+{{#post}}
+  {{> page-header template-class='template-archive' no-hero=true}}
+  <main class="main-content">
+    <div class="container-sm">
+      <div class="row">
+        <article class="{{post_class}} borderbox post-content custom-archive-template">
+          {{content}}
+          <div class="archive-page">
+            {{#get "posts" limit="all" as |articles pages|}}
+              <div class="archive-page-title">从 {{date published_at format="YYYY年MM月DD日"}} 共写了{{pages.total}}文章</div>
+              <ul class="archive-page-list">
+                {{#foreach articles}}
+                  <li class="archive-page-list-item">
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY-MM-DD"}}</time>
+                    <a href="{{url}}" class="archive-page-list-item-href">{{title}}</a>
+                  </li>
+                {{/foreach}}
+              </ul>
+            {{/get}}
+          </div>
+        </article>
+      </div>
+    </div>
+  </main>
+{{/post}}
