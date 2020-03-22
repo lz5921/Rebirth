@@ -57,7 +57,7 @@ fs.readFile(`${rootDir}/partials/post-tools.hbs`, 'utf8', (err, data) => {
 });
 
 /**
- * 文件操作 - CDN 预加载 / 首页关键词 / 备案号
+ * 文件操作 - CDN 预加载 / 首页关键词
  */
 fs.readFile(`${rootDir}/default.hbs`, 'utf8', (err, data) => {
   if (err) {
@@ -65,13 +65,28 @@ fs.readFile(`${rootDir}/default.hbs`, 'utf8', (err, data) => {
   }
   const result = data
     .replace(/<link rel="dns-prefetch" href="\/\/cdn\.iiong\.com">/, config.siteCdnUrl === '' ? `` : `<link rel="dns-prefetch" href="${config.siteCdnUrl}">`)
-    .replace(/<meta name="keywords" content="">/, `<meta name="keywords" content="${config.siteKeyWords}">`)
-    .replace(/<a href="http:\/\/beian\.miit\.gov\.cn" target="_blank" rel="nofollow noopener">苏ICP备15050739号-4<\/a>/, config.siteICPNumber)
-    .replace(/<a href="http:\/\/www\.beian\.gov\.cn\/portal\/registerSystemInfo\?recordcode=32010402000196" target="_blank" rel="nofollow noopener">苏公网安备32010402000196号<\/a>/, config.siteGAICPNumber)
-    .replace(/<a href="https:\/\/tongji\.baidu\.com\/web\/welcome\/ico\?s=075de8ed5c2bfb5f678b1a620749aee4" target="_blank" rel="nofollow noopener">百度统计<\/a>/, config.siteFooterOther)
-    .replace(/<div class="d-none d-md-block main-footer-meta">只争朝夕，不负韶华。<\/div>/, `<div class="d-none d-md-block main-footer-meta">${config.siteFooterSentence}</div>`);
-
+    .replace(/<meta name="keywords" content="">/, `<meta name="keywords" content="${config.siteKeyWords}">`);
   fs.writeFile(`${rootDir}/default.hbs`, result, 'utf8', (err) => {
+    if (err) {
+      throw err
+    }
+  });
+});
+
+/**
+ * 文件操作 - 备案号
+ */
+
+fs.readFile(`${rootDir}/partials/site-footer-copyright.hbs`, 'utf8', (err, data) => {
+  if (err) {
+    throw err
+  }
+  const result = data
+  .replace(/<a href="http:\/\/beian\.miit\.gov\.cn" target="_blank" rel="nofollow noopener">苏ICP备15050739号-4<\/a>/, config.siteICPNumber)
+  .replace(/<a href="http:\/\/www\.beian\.gov\.cn\/portal\/registerSystemInfo\?recordcode=32010402000196" target="_blank" rel="nofollow noopener">苏公网安备32010402000196号<\/a>/, config.siteGAICPNumber)
+  .replace(/<a href="https:\/\/tongji\.baidu\.com\/web\/welcome\/ico\?s=075de8ed5c2bfb5f678b1a620749aee4" target="_blank" rel="nofollow noopener">百度统计<\/a>/, config.siteFooterOther)
+  .replace(/<div class="d-none d-md-block main-footer-meta">只争朝夕，不负韶华。<\/div>/, `<div class="d-none d-md-block main-footer-meta">${config.siteFooterSentence}</div>`);
+  fs.writeFile(`${rootDir}/partials/site-footer-copyright.hbs`, result, 'utf8', (err) => {
     if (err) {
       throw err
     }
