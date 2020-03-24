@@ -76,7 +76,6 @@ fs.readFile(`${rootDir}/default.hbs`, 'utf8', (err, data) => {
 /**
  * 文件操作 - 备案号
  */
-
 fs.readFile(`${rootDir}/partials/site-footer-copyright.hbs`, 'utf8', (err, data) => {
   if (err) {
     throw err

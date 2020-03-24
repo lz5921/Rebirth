@@ -39,10 +39,10 @@
         </div>
         <div class="d-flex flex-column align-items-start ml-1 post-card-content-meta-other">
           <div class="post-card-content-meta-other-date">
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY-MM-DD"}}</time>
+            <i class="icon far fa-clock"></i> <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY-MM-DD"}}</time>
           </div>
           <div class="post-card-content-meta-other-readtime">
-            {{reading_time minute=(t "1分钟阅读") minutes=(t "%分钟阅读")}}
+            <i class="icon far fa-bookmark"></i> {{reading_time minute=(t "1分钟阅读") minutes=(t "%分钟阅读")}}
           </div>
         </div>
       </div>
