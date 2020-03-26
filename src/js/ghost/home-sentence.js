@@ -2,10 +2,11 @@ const toggleSentence = (window) => {
   const $ = window.jQuery;
   $.ajax({
     method: 'GET',
-    url: `https://v1.alapi.cn/api/mingyan`,
+    url: `https://v2.jinrishici.com/one.json`,
     dataType: 'json',
     data: {
-      typeid: Math.round(Math.random() * 45) + 1
+      client: 'browser-sdk/1.2',
+      'X-User-Token': 'I1ZMRgevAjAacZHzIc9khTBrhLgVKxt7'
     },
     success: function (result) {
       $('.home-sentence').text(result.data.content);
