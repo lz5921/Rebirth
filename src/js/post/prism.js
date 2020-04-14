@@ -3,7 +3,7 @@ import baseToast from '../other/toasts';
 
 export const prism = async (window) => {
   // Prismjs 库地址
-  const prismSrc = `https://cdn.jsdelivr.net/npm/prismjs@1.19.0`;
+  const prismSrc = `https://cdn.jsdelivr.net/npm/prismjs@1.20.0`;
   // 高亮语法块
   const codeBlocks = await window.document.querySelectorAll('.post-content pre>code');
   // 如果语法块不处理
