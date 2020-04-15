@@ -9,7 +9,7 @@ export const comment = () => {
       },
       {
         id: 'valine-js',
-        url: `https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js`
+        url: `https://cdn.jsdelivr.net/npm/valine@1.4.4/dist/Valine.min.js`
       }
     ]).then(() => {
       // eslint-disable-next-line no-undef
@@ -18,14 +18,16 @@ export const comment = () => {
         appId: 'REGleanCloudAppIdREG',
         appKey: 'REGleanCloudAppKeyREG',
         serverURLs: 'REGleanCloudServerURLREG',
-        notify: true,
-        verify: true,
         avatar: 'mm',
         visitor: true,
         highlight: true,
         recordIP: true,
         placeholder: '请您理智发言，共建美好社会！',
-        path: window.location.pathname
+        path: window.location.pathname,
+        meta: ['nick', 'mail', 'link'],
+        pageSize: 10,
+        lang: 'zh-CN',
+        avatarForce: false
       });
     });
   }
