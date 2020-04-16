@@ -12,6 +12,7 @@ import './post/prism';
 import './post/share';
 import './post/imageZoom';
 import './post/conversion';
+import './post/table';
 import './other/device';
 import './other/to-top';
 import './other/dark-mode';
