@@ -1,7 +1,5 @@
 const table = (window) => {
   window.document.querySelectorAll('.post-content table').forEach(block => {
-    block.parentNode.classList.add('overflow-x-hidden');
-
     const table = window.document.createElement('div');
     table.className = 'overflow-x-scroll table-area';
     table.innerHTML = `${block.outerHTML}`;
