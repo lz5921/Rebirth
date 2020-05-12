@@ -134,6 +134,19 @@
         .vquote {
           border-color: $dark-footer-background-color;
         }
+
+        .vcontent {
+          color: #4A4A4A;
+          &.expand {
+            &:before {
+              background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .9));
+            }
+            &:after {
+              color: $dark-main-color;
+              background: $dark-footer-background-color;
+            }
+          }
+        }
       }
     }
   }
