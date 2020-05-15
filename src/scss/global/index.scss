@@ -9,6 +9,14 @@ a {
   margin-right: 5px;
 }
 
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
 @mixin light-mode {
   :root {
     --color-content: light;

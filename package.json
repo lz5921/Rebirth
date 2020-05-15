@@ -23,22 +23,22 @@
     "@babel/plugin-proposal-class-properties": "^7.3.0",
     "@babel/plugin-proposal-decorators": "^7.3.0",
     "@babel/plugin-proposal-export-default-from": "^7.2.0",
-    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-env": "^7.9.5",
     "@babel/register": "^7.8.6",
-    "autoprefixer": "^9.4.7",
+    "autoprefixer": "^9.7.6",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.0.5",
     "clean-webpack-plugin": "3.0.0",
     "copy-webpack-plugin": "5.1.1",
-    "css-loader": "3.4.2",
+    "css-loader": "^3.5.2",
     "cssnano": "^4.1.8",
     "eslint": "6.8.0",
-    "eslint-config-airbnb-base": "14.0.0",
-    "eslint-loader": "3.0.3",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-loader": "^4.0.0",
     "eslint-plugin-import": "^2.14.0",
     "extract-loader": "^5.0.1",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
-    "file-loader": "^5.1.0",
+    "file-loader": "^6.0.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
@@ -48,7 +48,7 @@
     "webpack-cli": "^3.3.11"
   },
   "dependencies": {
-    "core-js": "^3.6.4"
+    "core-js": "^3.6.5"
   },
   "config": {
     "posts_per_page": 10,

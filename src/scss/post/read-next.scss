@@ -145,6 +145,12 @@
         background-size: cover;
         box-shadow: rgba(39, 44, 49, 0.06) 0.5rem 0.875rem 2.375rem, rgba(39, 44, 49, 0.03) 0.063rem 0.188rem 0.5rem;
         transition: all 0.5s ease;
+        &:hover {
+          .post-read-next-image {
+            transition: transform 500ms ease-in-out;
+            transform: scale(1.05);
+          }
+        }
 
         .post-read-next-image-link {
           position: relative;
@@ -310,6 +316,7 @@
               background: rgba(0, 0, 0, .5);
               width: 100%;
               height: 100%;
+              z-index: 1;
             }
           }
 

@@ -76,42 +76,6 @@
     left: 0;
     z-index: 0;
   }
-
-  &-header {
-    width: 100%;
-    height: 18rem;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: 0;
-    border-style: solid;
-    border-color: transparent transparent $background-color transparent;
-    &.header-right {
-      border-width: 0 100vw 9rem 0;
-    }
-    &.header-left {
-      border-width: 0 0 9rem 100vw;
-    }
-    // 小于 768px
-    @media (max-width: 767.98px) {
-      &.header-right {
-        border-width: 0 100vw 6rem 0;
-      }
-      &.header-left {
-        border-width: 0 0 6rem 100vw;
-      }
-    }
-
-    // 小于 576px
-    @media (max-width: 575.98px) {
-      &.header-right {
-        border-width: 0 100vw 3rem 0;
-      }
-      &.header-left {
-        border-width: 0 0 3rem 100vw;
-      }
-    }
-  }
 }
 
 @mixin dark-mode {
@@ -168,10 +132,6 @@
       .parallax > use:nth-child(4) {
         fill: rgba(38, 50, 56, 1);
       }
-    }
-
-    &-header {
-      border-color: transparent transparent $dark-background-color transparent;
     }
   }
 }

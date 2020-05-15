@@ -14,10 +14,10 @@
         border-left: 8px solid $dark-main-color;
       }
       .vwrap {
-        border: 1px solid #000;
+        border: 1px solid $dark-footer-background-color;
         .vheader {
           .vinput {
-            border-bottom: 1px #000 dashed;
+            border-bottom: 1px $dark-footer-background-color dashed;
           }
           .vinput:focus {
             border-bottom-color: #eb5055;
@@ -35,10 +35,10 @@
               color: $dark-main-color;
             }
             .vcode {
-              background: #000;
+              background: $dark-footer-background-color;
               &:focus {
                 border-color: $dark-background-color;
-                background-color: #000;
+                background-color: $dark-footer-background-color;
               }
             }
           }
@@ -69,8 +69,8 @@
       .vbtn:active,
       .vbtn:hover {
         color: $dark-main-hover-color;
-        border-color: #000;
-        background-color: #000;
+        border-color: $dark-footer-background-color;
+        background-color: $dark-footer-background-color;
       }
       .vempty {
         color: #999;
@@ -91,13 +91,13 @@
               }
             }
             .vsys {
-              background: #000;
+              background: $dark-footer-background-color;
               color: $dark-main-color;
             }
           }
 
           .vh {
-            border-bottom: 1px dashed #000;
+            border-bottom: 1px dashed $dark-footer-background-color;
             .vtime {
               color: #b3b3b3;
             }
@@ -115,16 +115,37 @@
               }
               &:after {
                 color: $dark-main-color;
-                background: #000;
+                background: $dark-footer-background-color;
               }
             }
           }
 
           .vquote {
             color: $dark-main-color;
-            border-left: 1px dashed #000;
+            border-left: 1px dashed $dark-footer-background-color;
           }
 
+        }
+      }
+      .vcards .vcard {
+        .vh {
+          border-color: $dark-footer-background-color;
+        }
+        .vquote {
+          border-color: $dark-footer-background-color;
+        }
+
+        .vcontent {
+          color: #4A4A4A;
+          &.expand {
+            &:before {
+              background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .9));
+            }
+            &:after {
+              color: $dark-main-color;
+              background: $dark-footer-background-color;
+            }
+          }
         }
       }
     }
