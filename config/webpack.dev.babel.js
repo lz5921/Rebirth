@@ -26,12 +26,14 @@ const getPlugins = () => {
     new FriendlyErrorsWebpackPlugin({
       clearConsole: true,
     }),
-    new CopyWebpackPlugin([
-      {
-        from: __dirname + '/../src/assets/',
-        to: __dirname + '/../assets/'
-      }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: __dirname + '/../src/assets/',
+          to: __dirname + '/../assets/'
+        }
+      ]
+    }),
     new ExtractTextPlugin({
       filename: '../css/styles.css',
       allChunks: true

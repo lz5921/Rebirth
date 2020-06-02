@@ -15,36 +15,38 @@ const getPlugins = () => {
   return [
     require('autoprefixer'),
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      {
-        from: __dirname + '/../src/assets/',
-        to: __dirname + '/../dist/assets/'
-      },
-      {
-        from: __dirname + '/../partials/',
-        to: __dirname + '/../dist/partials/'
-      },
-      {
-        from: __dirname + '/../*.hbs',
-        to: __dirname + '/../dist/'
-      },
-      {
-        from: __dirname + '/../package.json',
-        to: __dirname + '/../dist/'
-      },
-      {
-        from: __dirname + '/../robots.txt',
-        to: __dirname + '/../dist/'
-      },
-      {
-        from: __dirname + '/../LICENSE',
-        to: __dirname + '/../dist/'
-      },
-      {
-        from: __dirname + '/../site.config.json',
-        to: __dirname + '/../dist/'
-      }
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: __dirname + '/../src/assets/',
+          to: __dirname + '/../dist/assets/'
+        },
+        {
+          from: __dirname + '/../partials/',
+          to: __dirname + '/../dist/partials/'
+        },
+        {
+          from: __dirname + '/../*.hbs',
+          to: __dirname + '/../dist/'
+        },
+        {
+          from: __dirname + '/../package.json',
+          to: __dirname + '/../dist/'
+        },
+        {
+          from: __dirname + '/../robots.txt',
+          to: __dirname + '/../dist/'
+        },
+        {
+          from: __dirname + '/../LICENSE',
+          to: __dirname + '/../dist/'
+        },
+        {
+          from: __dirname + '/../site.config.json',
+          to: __dirname + '/../dist/'
+        }
+      ]
+    }),
     new ExtractTextPlugin({
       filename: './assets/css/styles.css',
       allChunks: true
