@@ -28,5 +28,6 @@
   "siteAboutName": "Jaxson Wang",
   "siteAboutEmail": "i@iiong.com",
   "siteAboutPosition": "Web Front-End Developer",
-  "siteAboutWebsite": "https://iiong.com"
+  "siteAboutWebsite": "https://iiong.com",
+  "siteAboutHello": "Hello World!"
 }

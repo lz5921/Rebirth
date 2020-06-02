@@ -67,7 +67,8 @@ npm i # 或者 yarn install
 "siteAboutName": "关于个人的模板 - 个人姓名",
 "siteAboutEmail": "关于个人的模板 - 个人邮箱",
 "siteAboutPosition": "关于个人的模板 - 个人职位",
-"siteAboutWebsite": "关于个人的模板 - 个人网站"
+"siteAboutWebsite": "关于个人的模板 - 个人网站",
+"siteAboutHello": "关于个人的模板 - 招呼语"
 ```
 
 填写后，执行 `npm run build` 或者 `yarn build` 得到 `dist` 文件夹，上传网站即可。
