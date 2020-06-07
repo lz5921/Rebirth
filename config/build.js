@@ -194,3 +194,25 @@ fs.readFile(`${rootDir}/partials/site-footer-info.hbs`, 'utf8', (err, data) => {
     }
   });
 });
+
+/**
+ * 文件操作 - 个人页面
+ */
+fs.readFile(`${rootDir}/custom-about-for-page.hbs`, 'utf8', (err, data) => {
+  if (err) {
+    throw err
+  }
+
+  const result = data
+    .replace(/Jaxson Wang/, config.siteAboutName)
+    .replace(/i@iiong.com/, config.siteAboutEmail)
+    .replace(/Web Front-End Developer/, config.siteAboutPosition)
+    .replace(/https:\/\/iiong.com/, config.siteAboutWebsite)
+    .replace(/Hello World!/, config.siteAboutHello)
+
+  fs.writeFile(`${rootDir}/custom-about-for-page.hbs`, result, 'utf8', (err) => {
+    if (err) {
+      throw err
+    }
+  });
+});

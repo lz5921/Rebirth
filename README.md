@@ -63,7 +63,12 @@ npm i # 或者 yarn install
 "siteToastsId": "弹窗ID唯一，字符串组合 ——必填",
 "siteToastsContent": "弹窗内容 ——必填",
 "siteToastsTime": "弹窗时间，例如2020-02-08T14:45:00，注意有个日期和时间中间有个【T】 ——必填",
-"siteTagsFilterNav": "标签云展示忽略的标签名称"
+"siteTagsFilterNav": "标签云展示忽略的标签名称",
+"siteAboutName": "关于个人的模板 - 个人姓名",
+"siteAboutEmail": "关于个人的模板 - 个人邮箱",
+"siteAboutPosition": "关于个人的模板 - 个人职位",
+"siteAboutWebsite": "关于个人的模板 - 个人网站",
+"siteAboutHello": "关于个人的模板 - 招呼语"
 ```
 
 填写后，执行 `npm run build` 或者 `yarn build` 得到 `dist` 文件夹，上传网站即可。
