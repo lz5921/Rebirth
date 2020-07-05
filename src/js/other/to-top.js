@@ -1,23 +1,23 @@
 export const toTop = (window) => {
-  const $ = window.jQuery;
-  const returnTop = $('.click-to-top');
+  const $ = window.jQuery
+  const returnTop = $('.click-to-top')
   if ($(this).scrollTop() >= 50) {
-    returnTop.addClass('bounceInRight').removeClass('bounceOutDown');
+    returnTop.addClass('bounceInRight').removeClass('bounceOutDown')
   } else {
-    returnTop.removeClass('bounceInRight').addClass('bounceOutDown');
+    returnTop.removeClass('bounceInRight').addClass('bounceOutDown')
   }
-  $(window).scroll(function () {
+  $(window).scroll(function() {
     if ($(this).scrollTop() >= 50) {
-      returnTop.addClass('bounceInRight').removeClass('bounceOutDown');
+      returnTop.addClass('bounceInRight').removeClass('bounceOutDown')
     } else {
-      returnTop.removeClass('bounceInRight').addClass('bounceOutDown');
+      returnTop.removeClass('bounceInRight').addClass('bounceOutDown')
     }
-  });
-  returnTop.click(function () {
+  })
+  returnTop.click(function() {
     $('body, html').animate({
       scrollTop: 0
-    }, 500);
-  });
-};
+    }, 500)
+  })
+}
 
-export default toTop(window);
+export default toTop(window)

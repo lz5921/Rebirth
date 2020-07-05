@@ -1,4 +1,4 @@
-import {parseTime} from '../untils/dateTime';
+import { parseTime } from '../untils/dateTime'
 
 const search = (window, $) => {
   // 初始化
@@ -18,25 +18,25 @@ const search = (window, $) => {
         fields: ['title', 'published_at', 'url']
       }
     },
-    template: function (results) {
-      const time = parseTime(new Date(results.published_at), '{y}-{m}-{d}');
+    template: function(results) {
+      const time = parseTime(new Date(results.published_at), '{y}-{m}-{d}')
       return '' +
         '<a href="' + results.url + '" class="ghost-search-item">' +
         '<h2>' + results.title + '</h2>' +
         '<span>发布日期：' + time + '</span>' +
-        '</a>';
+        '</a>'
     },
     on: {
-      afterDisplay: function (result) {
-        const mate = $('.search-meta');
-        let text = mate.attr('data-no-results-text');
-        text = text.replace('[results]', result.total);
-        mate.text(text).show();
+      afterDisplay: function(result) {
+        const mate = $('.search-meta')
+        let text = mate.attr('data-no-results-text')
+        text = text.replace('[results]', result.total)
+        mate.text(text).show()
       }
     }
-  });
+  })
 
-  $('#ghost-search-field').focus();
-};
+  $('#ghost-search-field').focus()
+}
 
-export default search(window, window.jQuery);
+export default search(window, window.jQuery)

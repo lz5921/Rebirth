@@ -1,15 +1,15 @@
-'use strict';
+'use strict'
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 
 const getEntries = () => {
   return [
     './src/js/app.js',
     './src/scss/app.scss'
-  ];
-};
+  ]
+}
 
 const getPlugins = () => {
   return [
@@ -51,8 +51,8 @@ const getPlugins = () => {
       filename: './assets/css/styles.css',
       allChunks: true
     })
-  ];
-};
+  ]
+}
 
 module.exports = {
   entry: getEntries(),
@@ -97,4 +97,4 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jpg', '.scss']
   }
-};
+}

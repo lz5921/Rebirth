@@ -15,7 +15,7 @@ into the {body} of the default.hbs template --}}
           {{content}}
           <div class="archive-page">
             {{#get "posts" limit="all" as |articles pages|}}
-              <div class="archive-page-title">从 {{date published_at format="YYYY年MM月DD日"}} 共写了{{pages.total}}文章</div>
+              <div class="archive-page-title">{{date published_at format="YYYY年MM月DD日"}} 累计 {{pages.total}} 篇文章</div>
               <ul class="archive-page-list">
                 {{#foreach articles}}
                   <li class="archive-page-list-item">

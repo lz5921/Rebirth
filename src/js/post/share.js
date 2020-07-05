@@ -1,7 +1,7 @@
-import qrcode from '../other/qrcode';
+import qrcode from '../other/qrcode'
 
 export const share = (window) => {
-  const $ = window.jQuery;
+  const $ = window.jQuery
   $('.btn-share-popover').on('shown.bs.popover', () => {
     qrcode.then(response => {
       // eslint-disable-next-line no-undef,no-unused-vars
@@ -12,9 +12,9 @@ export const share = (window) => {
         colorDark: '#000000',
         colorLight: '#ffffff',
         correctLevel: window.QRCode.CorrectLevel.H
-      });
-    });
-  });
-};
+      })
+    })
+  })
+}
 
-export default share(window);
+export default share(window)

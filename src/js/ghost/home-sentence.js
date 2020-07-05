@@ -1,5 +1,5 @@
 const toggleSentence = (window) => {
-  const $ = window.jQuery;
+  const $ = window.jQuery
   $.ajax({
     method: 'GET',
     url: `https://v2.jinrishici.com/one.json`,
@@ -8,14 +8,14 @@ const toggleSentence = (window) => {
       client: 'browser-sdk/1.2',
       'X-User-Token': 'I1ZMRgevAjAacZHzIc9khTBrhLgVKxt7'
     },
-    success: function (result) {
-      $('.home-sentence').text(result.data.content);
+    success: function(result) {
+      $('.home-sentence').text(result.data.content)
     }
-  });
-};
+  })
+}
 
 export const homeSentence = (window) => {
-  toggleSentence(window);
-};
+  toggleSentence(window)
+}
 
-export default homeSentence(window);
+export default homeSentence(window)

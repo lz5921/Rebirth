@@ -5,18 +5,18 @@
  */
 const search = (window, $) => {
   $('.click-search').click((event) => {
-    $('body').addClass('overflow-hidden').append('<div class="modal-backdrop fade show global-modal global-modal-pc-search"></div>');
+    $('body').addClass('overflow-hidden').append('<div class="modal-backdrop fade show global-modal global-modal-pc-search"></div>')
     // 移除搜索界面隐藏样式
-    $('.search-wrapper').show(250);
-  });
+    $('.search-wrapper').show(250)
+  })
 
   $('.click-search-close').click((event) => {
-    $('body').removeClass('overflow-hidden');
+    $('body').removeClass('overflow-hidden')
     // 移除搜索界面隐藏样式
-    $('.search-wrapper').hide(250);
+    $('.search-wrapper').hide(250)
     // 移除全局遮罩层
-    $('.global-modal-pc-search').remove();
-  });
-};
+    $('.global-modal-pc-search').remove()
+  })
+}
 
-export default search(window, window.jQuery);
+export default search(window, window.jQuery)

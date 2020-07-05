@@ -1,4 +1,4 @@
-import {loadScripts} from '../untils';
+import { loadScripts } from '../untils'
 
 export const comment = () => {
   if (document.getElementById('vcomments') !== null) {
@@ -28,9 +28,9 @@ export const comment = () => {
         pageSize: 10,
         lang: 'zh-CN',
         avatarForce: false
-      });
-    });
+      })
+    })
   }
-};
+}
 
-export default comment();
+export default comment()

@@ -5,6 +5,6 @@
  */
 const postList = (window, $) => {
 
-};
+}
 
-export default postList(window, window.jQuery);
+export default postList(window, window.jQuery)
