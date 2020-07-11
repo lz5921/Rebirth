@@ -5,7 +5,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-const { resolve } = require('path')
+const path = require('path')
 
 const getEntries = () => {
   return {
@@ -14,6 +14,10 @@ const getEntries = () => {
       './src/scss/app.scss'
     ]
   }
+}
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
 }
 
 const getPlugins = () => {
@@ -29,8 +33,8 @@ const getPlugins = () => {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: __dirname + '/../src/assets/',
-          to: __dirname + '/../assets/'
+          from: resolve('/../src/assets/'),
+          to: resolve('/../assets/')
         }
       ]
     }),
@@ -45,7 +49,7 @@ module.exports = {
   entry: getEntries(),
   output: {
     filename: '[name].js',
-    path: __dirname + '/../assets/js/'
+    path: resolve('/../assets/js/')
   },
   plugins: getPlugins(),
   devtool: 'inline-source-map',

@@ -3,12 +3,17 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
 
 const getEntries = () => {
   return [
     './src/js/app.js',
     './src/scss/app.scss'
   ]
+}
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
 }
 
 const getPlugins = () => {
@@ -18,32 +23,32 @@ const getPlugins = () => {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: __dirname + '/../src/assets/',
-          to: __dirname + '/../dist/assets/'
+          from: resolve('/../src/assets/'),
+          to: resolve('/../dist/assets/')
         },
         {
-          from: __dirname + '/../partials/',
-          to: __dirname + '/../dist/partials/'
+          from: resolve('/../partials/'),
+          to: resolve('/../dist/partials/')
         },
         {
-          from: __dirname + '/../*.hbs',
-          to: __dirname + '/../dist/'
+          from: resolve('/../*.hbs'),
+          to: resolve('/../dist/')
         },
         {
-          from: __dirname + '/../package.json',
-          to: __dirname + '/../dist/'
+          from: resolve('/../package.json'),
+          to: resolve('/../dist/')
         },
         {
-          from: __dirname + '/../robots.txt',
-          to: __dirname + '/../dist/'
+          from: resolve('/../robots.txt'),
+          to: resolve('/../dist/')
         },
         {
-          from: __dirname + '/../LICENSE',
-          to: __dirname + '/../dist/'
+          from: resolve('/../LICENSE'),
+          to: resolve('/../dist/')
         },
         {
-          from: __dirname + '/../site.config.json',
-          to: __dirname + '/../dist/'
+          from: resolve('/../site.config.json'),
+          to: resolve('/../dist/')
         }
       ]
     }),
