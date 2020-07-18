@@ -9,7 +9,7 @@ const global = (window, $) => {
     id: 'bd-push-js',
     url: 'http://push.zhanzhang.baidu.com/push.js'
   }])
-  window.document.querySelectorAll('.post-content a').forEach(block => {
+  window.document.querySelectorAll('.post-content-use-blank a').forEach(block => {
     block.setAttribute('target', '_blank')
   })
   window.document.querySelectorAll('.main-footer-info-navigation-list a').forEach(block => {
