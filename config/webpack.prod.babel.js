@@ -23,34 +23,77 @@ const getPlugins = () => {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: resolve('/../src/assets/'),
-          to: resolve('/../dist/assets/')
+          from: resolve('../src/assets/'),
+          to: resolve('../dist/assets/')
         },
         {
-          from: resolve('/../partials/'),
-          to: resolve('/../dist/partials/')
+          from: resolve('../partials/'),
+          to: resolve('../dist/partials/')
         },
         {
-          from: resolve('/../*.hbs'),
-          to: resolve('/../dist/')
+          from: resolve('../author.hbs'),
+          to: resolve('../dist/')
         },
         {
-          from: resolve('/../package.json'),
-          to: resolve('/../dist/')
+          from: resolve('../custom-about-for-page.hbs'),
+          to: resolve('../dist/')
         },
         {
-          from: resolve('/../robots.txt'),
-          to: resolve('/../dist/')
+          from: resolve('../custom-archive-for-page.hbs'),
+          to: resolve('../dist/')
         },
         {
-          from: resolve('/../LICENSE'),
-          to: resolve('/../dist/')
+          from: resolve('../custom-full-width-for-post.hbs'),
+          to: resolve('../dist/')
         },
         {
-          from: resolve('/../site.config.json'),
-          to: resolve('/../dist/')
+          from: resolve('../custom-links-for-page.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../default.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../error-404.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../index.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../page.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../post.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../tag.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../package.json'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../robots.txt'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../LICENSE'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../site.config.json'),
+          to: resolve('../dist/')
         }
-      ]
+      ],
+      options: {
+        concurrency: 100
+      }
     }),
     new ExtractTextPlugin({
       filename: './assets/css/styles.css',

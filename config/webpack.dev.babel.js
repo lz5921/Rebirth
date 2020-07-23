@@ -33,8 +33,8 @@ const getPlugins = () => {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: resolve('/../src/assets/'),
-          to: resolve('/../assets/')
+          from: resolve('../src/assets/'),
+          to: resolve('../assets/')
         }
       ]
     }),
@@ -49,7 +49,7 @@ module.exports = {
   entry: getEntries(),
   output: {
     filename: '[name].js',
-    path: resolve('/../assets/js/')
+    path: resolve('../assets/js/')
   },
   plugins: getPlugins(),
   devtool: 'inline-source-map',

@@ -5,3 +5,4 @@ node_modules/
 .vscode/
 site.config.json
 .DS_Store
+dist/
