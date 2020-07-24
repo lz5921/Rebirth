@@ -1,4 +1,4 @@
-import {loadScripts} from '../untils';
+import { loadScripts } from '../untils'
 
 const global = (window, $) => {
   // 百度推送
@@ -8,13 +8,13 @@ const global = (window, $) => {
   }]) : loadScripts([{
     id: 'bd-push-js',
     url: 'http://push.zhanzhang.baidu.com/push.js'
-  }]);
-  window.document.querySelectorAll('.post-content a').forEach(block => {
-    block.setAttribute('target', '_blank');
-  });
+  }])
+  window.document.querySelectorAll('.post-content-use-blank a').forEach(block => {
+    block.setAttribute('target', '_blank')
+  })
   window.document.querySelectorAll('.main-footer-info-navigation-list a').forEach(block => {
-    block.setAttribute('target', '_blank');
-  });
-};
+    block.setAttribute('target', '_blank')
+  })
+}
 
-export default global(window, window.jQuery);
+export default global(window, window.jQuery)

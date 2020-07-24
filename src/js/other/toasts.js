@@ -1,4 +1,4 @@
-import { formatTime } from '../untils/dateTime';
+import { formatTime } from '../untils/dateTime'
 
 /**
  * 封装 BootStrap Toast 方法
@@ -6,17 +6,17 @@ import { formatTime } from '../untils/dateTime';
  * @param options toast 配置选项 选填
  */
 const baseToast = ($, options) => {
-  const timeTmp = new Date().valueOf(); // 用于 Toast 唯一性
+  const timeTmp = new Date().valueOf() // 用于 Toast 唯一性
   const defaultOptions = {
     animation: true,
     autohide: true,
     delay: 2500
-  };
-  const toastId = options.id === undefined ? console.warn('未填写 Toast 节点ID') : options.id;
-  const toastContent = options.content === undefined ? console.warn('未填写 Toast 内容') : options.content;
-  const toastTime = options.time === undefined ? formatTime(new Date()) : formatTime(new Date(options.time));
-  const toastOptions = options.config === undefined ? defaultOptions : options.config;
-  const toastParDom = '.toast-wrapper .toast-wrapper-list';
+  }
+  const toastId = options.id === undefined ? console.warn('未填写 Toast 节点ID') : options.id
+  const toastContent = options.content === undefined ? console.warn('未填写 Toast 内容') : options.content
+  const toastTime = options.time === undefined ? formatTime(new Date()) : formatTime(new Date(options.time))
+  const toastOptions = options.config === undefined ? defaultOptions : options.config
+  const toastParDom = '.toast-wrapper .toast-wrapper-list'
   const toastTemplate = `
 <div id="${toastId + timeTmp}" class="toast toast-wrapper-list-item ${toastId}" role="alert" aria-live="assertive" aria-atomic="true">
   <div class="toast-header">
@@ -29,14 +29,14 @@ const baseToast = ($, options) => {
   </div>
   <div class="toast-body">${toastContent}</div>
 </div>
-`;
-  $(toastParDom).append(toastTemplate);
+`
+  $(toastParDom).append(toastTemplate)
   $(`#${toastId + timeTmp}`)
     .toast(toastOptions)
     .toast('show')
-    .on('hidden.bs.toast', function () {
-      $(this).remove();
-    });
-};
+    .on('hidden.bs.toast', function() {
+      $(this).remove()
+    })
+}
 
-export default baseToast;
+export default baseToast

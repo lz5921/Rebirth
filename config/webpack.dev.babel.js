@@ -1,11 +1,11 @@
-'use strict';
+'use strict'
 
-const webpack = require('webpack');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
-const {resolve} = require('path');
+const webpack = require('webpack')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
 
 const getEntries = () => {
   return {
@@ -13,8 +13,12 @@ const getEntries = () => {
       './src/js/app.js',
       './src/scss/app.scss'
     ]
-  };
-};
+  }
+}
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
 
 const getPlugins = () => {
   return [
@@ -24,13 +28,13 @@ const getPlugins = () => {
     require('autoprefixer'),
     new webpack.HotModuleReplacementPlugin(),
     new FriendlyErrorsWebpackPlugin({
-      clearConsole: true,
+      clearConsole: true
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: __dirname + '/../src/assets/',
-          to: __dirname + '/../assets/'
+          from: resolve('../src/assets/'),
+          to: resolve('../assets/')
         }
       ]
     }),
@@ -38,14 +42,14 @@ const getPlugins = () => {
       filename: '../css/styles.css',
       allChunks: true
     })
-  ];
-};
+  ]
+}
 
 module.exports = {
   entry: getEntries(),
   output: {
     filename: '[name].js',
-    path: __dirname + '/../assets/js/'
+    path: resolve('../assets/js/')
   },
   plugins: getPlugins(),
   devtool: 'inline-source-map',
@@ -54,7 +58,7 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        use: ['babel-loader']
       },
       {
         enforce: 'pre',
@@ -62,7 +66,7 @@ module.exports = {
         exclude: /node_modules/,
         loader: 'eslint-loader',
         options: {
-          emitWarning: true,
+          emitWarning: true
         }
       },
       {
@@ -96,10 +100,10 @@ module.exports = {
             }
           ]
         })
-      },
-    ],
+      }
+    ]
   },
   resolve: {
-    extensions: ['.js', '.jpg', '.scss'],
-  },
-};
+    extensions: ['.js', '.jpg', '.scss']
+  }
+}

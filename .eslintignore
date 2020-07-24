@@ -1,4 +1,3 @@
 build/*.js
 src/assets
-config
 dist/*.js

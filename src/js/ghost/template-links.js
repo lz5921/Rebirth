@@ -1,9 +1,9 @@
 export const templateLinks = (window) => {
-  const ul = window.document.querySelector('.custom-links-template ul');
-  if (ul !== null) ul.classList.add('row', 'mx-0');
+  const ul = window.document.querySelector('.custom-links-template ul')
+  if (ul !== null) ul.classList.add('row', 'mx-0')
   window.document.querySelectorAll('.custom-links-template ul li').forEach(block => {
-    const itemLink = block.textContent.split('|');
-    block.classList.add('col-sm-12', 'col-md-6', 'col-lg-4', 'col-xl-4', 'mb-4');
+    const itemLink = block.textContent.split('|')
+    block.classList.add('col-sm-12', 'col-md-6', 'col-lg-4', 'col-xl-4', 'mb-4')
     block.innerHTML = `
       <div class="shadow px-3 links-item-wrapper">
         <div class="links-item-wrapper-header">
@@ -16,8 +16,8 @@ export const templateLinks = (window) => {
           <div class="links-item-wrapper-content-desc">${itemLink[3]}</div>
         </div>
       </div>
-      `;
-  });
-};
+      `
+  })
+}
 
-export default templateLinks(window);
+export default templateLinks(window)

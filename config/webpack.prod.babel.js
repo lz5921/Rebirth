@@ -1,15 +1,20 @@
-'use strict';
+'use strict'
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
 
 const getEntries = () => {
   return [
     './src/js/app.js',
     './src/scss/app.scss'
-  ];
-};
+  ]
+}
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
 
 const getPlugins = () => {
   return [
@@ -18,41 +23,84 @@ const getPlugins = () => {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: __dirname + '/../src/assets/',
-          to: __dirname + '/../dist/assets/'
+          from: resolve('../src/assets/'),
+          to: resolve('../dist/assets/')
         },
         {
-          from: __dirname + '/../partials/',
-          to: __dirname + '/../dist/partials/'
+          from: resolve('../partials/'),
+          to: resolve('../dist/partials/')
         },
         {
-          from: __dirname + '/../*.hbs',
-          to: __dirname + '/../dist/'
+          from: resolve('../author.hbs'),
+          to: resolve('../dist/')
         },
         {
-          from: __dirname + '/../package.json',
-          to: __dirname + '/../dist/'
+          from: resolve('../custom-about-for-page.hbs'),
+          to: resolve('../dist/')
         },
         {
-          from: __dirname + '/../robots.txt',
-          to: __dirname + '/../dist/'
+          from: resolve('../custom-archive-for-page.hbs'),
+          to: resolve('../dist/')
         },
         {
-          from: __dirname + '/../LICENSE',
-          to: __dirname + '/../dist/'
+          from: resolve('../custom-full-width-for-post.hbs'),
+          to: resolve('../dist/')
         },
         {
-          from: __dirname + '/../site.config.json',
-          to: __dirname + '/../dist/'
+          from: resolve('../custom-links-for-page.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../default.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../error-404.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../index.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../page.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../post.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../tag.hbs'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../package.json'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../robots.txt'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../LICENSE'),
+          to: resolve('../dist/')
+        },
+        {
+          from: resolve('../site.config.json'),
+          to: resolve('../dist/')
         }
-      ]
+      ],
+      options: {
+        concurrency: 100
+      }
     }),
     new ExtractTextPlugin({
       filename: './assets/css/styles.css',
       allChunks: true
     })
-  ];
-};
+  ]
+}
 
 module.exports = {
   entry: getEntries(),
@@ -97,4 +145,4 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jpg', '.scss']
   }
-};
+}
