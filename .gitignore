@@ -6,3 +6,5 @@ node_modules/
 site.config.json
 .DS_Store
 dist/
+node_modules/
+rebirth/
