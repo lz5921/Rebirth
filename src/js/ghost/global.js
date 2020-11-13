@@ -10,10 +10,14 @@ const global = (window, $) => {
     url: 'http://push.zhanzhang.baidu.com/push.js'
   }])
   window.document.querySelectorAll('.post-content-use-blank a').forEach(block => {
-    block.setAttribute('target', '_blank')
+    if (block.getAttribute('href') !== null && !/^(#|javascript).*/.test(block.getAttribute('href'))) {
+      block.setAttribute('target', '_blank')
+    }
   })
   window.document.querySelectorAll('.main-footer-info-navigation-list a').forEach(block => {
-    block.setAttribute('target', '_blank')
+    if (block.getAttribute('href') !== null && !/^(#|javascript).*/.test(block.getAttribute('href'))) {
+      block.setAttribute('target', '_blank')
+    }
   })
 }
 

@@ -29,6 +29,10 @@ export const comment = () => {
         lang: 'zh-CN',
         avatarForce: false
       })
+      window.onload = () => {
+        // 重定向描链接
+        if (window.location.hash !== '') window.location.href = window.location.hash
+      }
     })
   }
 }
